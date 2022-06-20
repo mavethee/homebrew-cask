@@ -1,9 +1,8 @@
 cask "warp" do
-  version "0.2022.05.16.09.01.stable_01"
-  sha256 "fc912d946eb0ce0b44d8fa5c1ec004112a8a482653bae734251e4fed5c9bfb34"
+  version "0.2022.06.13.09.15.stable_01"
+  sha256 "b7a2c6395db9db19985d3e697e8b441b2c4dde1a177f6f0c13d3cab32edfaea7"
 
-  url "https://warp-releases.storage.googleapis.com/stable/v#{version}/Warp.dmg",
-      verified: "warp-releases.storage.googleapis.com"
+  url "https://app.warp.dev/download/brew?version=v#{version}"
   name "Warp"
   desc "Rust-based terminal"
   homepage "https://www.warp.dev/"
@@ -18,8 +17,8 @@ cask "warp" do
   app "Warp.app"
 
   zap trash: [
-    "~/Library/Preferences/dev.warp.Warp-Stable.plist",
     "~/Library/Application Support/dev.warp.Warp-Stable",
     "~/Library/Logs/warp.log",
+    "~/Library/Preferences/dev.warp.Warp-Stable.plist",
   ]
 end

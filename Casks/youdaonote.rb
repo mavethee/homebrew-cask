@@ -1,6 +1,6 @@
 cask "youdaonote" do
-  version "7.0.10"
-  sha256 "505de6377dd8f7af881c837779de16b9af34b80534c223fac16e5b7e126ab028"
+  version "7.1.0"
+  sha256 "b8700d4db61d81055c8e8af2ef5b276431716a65e7f2d8bc3fdd2e373cac7eba"
 
   url "https://artifact.lx.netease.com/download/ynote-electron/%E6%9C%89%E9%81%93%E4%BA%91%E7%AC%94%E8%AE%B0-#{version}.zip",
       user_agent: :fake,
