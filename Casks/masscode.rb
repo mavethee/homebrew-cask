@@ -1,9 +1,16 @@
 cask "masscode" do
-  version "1.3.1"
-  sha256 "e97324388b26e916e81a16ffc8433e0dd8e31baf62e6d79d1c8f15788b6cc326"
+  arch = Hardware::CPU.intel? ? "" : "-arm64"
 
-  url "https://github.com/antonreshetov/massCode/releases/download/v#{version}/massCode-#{version}.dmg",
-      verified: "github.com/antonreshetov/massCode/"
+  version "2.8.1"
+
+  if Hardware::CPU.intel?
+    sha256 "4871633f59c0f7995dc352c6a75b03d2eb49cbb849b53b0f2b15e4d92a72b95a"
+  else
+    sha256 "66f041dd5a38ef6a63bd2229c5254760f9528e16f8938dc14c25b2ecba04eafd"
+  end
+
+  url "https://github.com/massCodeIO/massCode/releases/download/v#{version}/massCode-#{version}#{arch}.dmg",
+      verified: "https://github.com/massCodeIO/massCode/"
   name "massCode"
   desc "Open-source code snippets manager for developers"
   homepage "https://masscode.io/"

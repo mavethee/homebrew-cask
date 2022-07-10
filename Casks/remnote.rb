@@ -1,6 +1,6 @@
 cask "remnote" do
-  version "1.7.6"
-  sha256 "2dd23f3cdc19daf9a03531aebd7e3b6ecac46a86322ab4904d2ee040d9ce4b96"
+  version "1.8.5"
+  sha256 "3c388748b1ab6dd17deab99d9fa2ec3dc5dac74eebd052ebb9af96f9a4f5a622"
 
   url "https://download.remnote.io/RemNote-#{version}.dmg",
       verified: "remnote.io"

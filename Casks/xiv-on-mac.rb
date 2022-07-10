@@ -1,6 +1,6 @@
 cask "xiv-on-mac" do
-  version "4.1"
-  sha256 "b97e27de4ad815bff253728b97f04e4a1bc21d318d30edae4e443f73baa54139"
+  version "4.1.4"
+  sha256 "29be3044c186080839bb221a30c53789fecf500320b577cf5bfc0672f817f001"
 
   url "https://softwareupdate.xivmac.com/sites/default/files/update_data/XIV%20on%20Mac#{version}.tar.xz"
   name "XIV on Mac"

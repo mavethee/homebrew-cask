@@ -1,6 +1,6 @@
 cask "cog" do
-  version "2348,8009d911"
-  sha256 "79bece25893828fbd5bdcbf05bda0d636febdcfb47318d33f1b84cff66beacfa"
+  version "2557,413ec69e"
+  sha256 "02113e1a0bfef8b42cb01e06cdb92f33452bf1b705c8b82dfd23fb30da4369d3"
 
   url "https://cogcdn.cog.losno.co/Cog-#{version.csv.second}.zip"
   name "Cog"
@@ -9,8 +9,12 @@ cask "cog" do
 
   livecheck do
     url "https://cogcdn.cog.losno.co/mercury.xml"
-    strategy :sparkle do |item|
-      item.version.split("-g", 2).join(",")
+    regex(%r{/Cog[._-](\h+)\.zip}i)
+    strategy :sparkle do |item, regex|
+      match = item.url&.match(regex)
+      next if !item&.short_version || match.blank?
+
+      "#{item.short_version},#{match[1]}"
     end
   end
 
