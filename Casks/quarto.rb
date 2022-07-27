@@ -1,12 +1,17 @@
 cask "quarto" do
-  version "1.0.5"
-  sha256 "e9af2c604ee3dcaa73c040882407c167595000697ef8687ec2a19fa10a0538d5"
+  version "1.0.37"
+  sha256 "07b79bc9742e5b4c59556cecfd2ea3155b59d75bafbbee5262f9bfd1fbcb5519"
 
   url "https://github.com/quarto-dev/quarto-cli/releases/download/v#{version}/quarto-#{version}-macos.pkg",
       verified: "github.com/quarto-dev/quarto-cli/"
   name "quarto"
   desc "Scientific and technical publishing system built on Pandoc"
   homepage "https://www.quarto.org/"
+
+  livecheck do
+    url :url
+    strategy :github_latest
+  end
 
   depends_on macos: ">= :el_capitan"
 
