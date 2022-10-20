@@ -1,13 +1,9 @@
 cask "wing-personal" do
-  arch = Hardware::CPU.intel? ? "intel" : "arm64"
+  arch arm: "arm64", intel: "intel"
 
-  version "8.3.2.0"
-
-  if Hardware::CPU.intel?
-    sha256 "9eae9bb82491cb1bce82ae407a39ac90f5ddfa1ff20bbcb33428091a1f462258"
-  else
-    sha256 "437193ca239d26085c7025a2c9b60acb5147c448bd7138485a3e50e5a510db2e"
-  end
+  version "8.3.3.0"
+  sha256 arm:   "9ef3113269f165c8a3235827cb39321fe488557440569c2060ff5b136b58a53a",
+         intel: "06214808731fe6e267a7509254a62ffabf529d15f0a6ea0c45acbcd16191162c"
 
   url "https://wingware.com/pub/wing-personal/#{version}/wing-personal-#{version}-#{arch}.dmg"
   name "Wing Personal"
@@ -15,8 +11,8 @@ cask "wing-personal" do
   homepage "https://www.wingware.com/"
 
   livecheck do
-    url "https://wingware.com/pub/wing-personal/"
-    regex(%r{href="(\d+(?:\.\d+)+)/"}i)
+    url "https://wingware.com/downloads/wing-personal"
+    regex(%r{href=.*?/pub/wing-personal/v?(\d+(?:\.\d+)+)}i)
   end
 
   depends_on macos: ">= :high_sierra"

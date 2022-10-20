@@ -1,6 +1,6 @@
 cask "shortcat" do
-  version "0.9.3,155"
-  sha256 "1f935f7fa49a640117396ae15cfe5cdfdfdb7269f16b2b3d61faf2f3e2cb5884"
+  version "0.10.4,171"
+  sha256 "76ef691f935fb68e6e33319bec3ebebde882580604cd36d1c5f2478b0f558240"
 
   url "https://files.shortcat.app/releases/v#{version.csv.first}/Shortcat.zip"
   name "Sproutcube Shortcat"
@@ -12,6 +12,7 @@ cask "shortcat" do
     strategy :sparkle
   end
 
+  auto_updates true
   depends_on macos: ">= :big_sur"
 
   app "Shortcat.app"

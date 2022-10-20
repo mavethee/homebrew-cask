@@ -1,8 +1,8 @@
 cask "todesk" do
-  version "4.3.0.0"
-  sha256 "0165d299c6ce0da5aeef1254041755124921dcfaef7f51c20ecd9a5ff78dfcc5"
+  version "4.3.1.1"
+  sha256 "1149ad70503f116d07c7e87874601cbba5e0733f6b94f25ebf7fe055a4207bfe"
 
-  url "https://dl.todesk.com/macos/ToDesk_#{version}.zip"
+  url "https://dl.todesk.com/macos/ToDesk_#{version}.pkg"
   name "ToDesk"
   desc "Remote control software"
   homepage "https://www.todesk.com/"

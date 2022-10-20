@@ -1,13 +1,9 @@
 cask "rancher" do
-  arch = Hardware::CPU.intel? ? "x86_64" : "aarch64"
+  arch arm: "aarch64", intel: "x86_64"
 
-  version "1.4.1"
-
-  if Hardware::CPU.intel?
-    sha256 "74a4e511b22fc4db27a1c844c6ebf109f224e9cdce967a0a47c50001bc465076"
-  else
-    sha256 "8eb1b68bb7463eb023bad1e6bce4e21efa16e570b717875e5026ed2f94de9f1d"
-  end
+  version "1.6.0"
+  sha256 arm:   "98f1025ca7e50b8792412b0f23a72130155701af7152dcd573920c7eebf4d2fb",
+         intel: "614385b503bdae9d21c7ceb3045f35faac883e571b454dbf06205e15be4251e2"
 
   url "https://github.com/rancher-sandbox/rancher-desktop/releases/download/v#{version}/Rancher.Desktop-#{version}.#{arch}.dmg",
       verified: "github.com/rancher-sandbox/rancher-desktop/"

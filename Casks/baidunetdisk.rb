@@ -1,13 +1,16 @@
 cask "baidunetdisk" do
-  version "4.11.0"
+  arch arm: "arm64", intel: "x64"
 
-  if Hardware::CPU.intel?
-    sha256 "99f150a2519fd05a3e706ff267401e6867f4fb1b329bc43e6076fdaf37b157ba"
-    url "https://issuepcdn.baidupcs.com/issue/netdisk/MACguanjia/BaiduNetdisk_mac_#{version}.dmg",
+  version "4.14.7"
+
+  on_intel do
+    sha256 "716d9a658661d2fcfdf7e84aca3db3b2f5e27c4468673ba73166a9a874c53b98"
+    url "https://issuepcdn.baidupcs.com/issue/netdisk/MACguanjia/#{version}/BaiduNetdisk_mac_#{version}_#{arch}.dmg",
         verified: "issuepcdn.baidupcs.com/issue/netdisk/MACguanjia/"
-  else
-    sha256 "07ab63de9c64c60ab6b50ea0d49233876cd5344e6fe83dc0bc43bd4f4c1c36fe"
-    url "https://issuepcdn.baidupcs.com/issue/netdisk/MACguanjia/BaiduNetdisk_mac_#{version}_arm64.dmg",
+  end
+  on_arm do
+    sha256 "3853603b2383c16473023fde4ae77cb0a70055067b7205ae7aa42b2fb8d25ca8"
+    url "https://issuepcdn.baidupcs.com/issue/netdisk/MACguanjia/#{version}/BaiduNetdisk_mac_#{version}_#{arch}.dmg",
         verified: "issuepcdn.baidupcs.com/issue/netdisk/MACguanjia/"
   end
 
@@ -18,7 +21,7 @@ cask "baidunetdisk" do
 
   livecheck do
     url "https://pan.baidu.com/disk/cmsdata?do=client"
-    regex(/BaiduNetdisk[._-]mac[._-]v?(\d+(?:\.\d+)+)\.dmg/i)
+    regex(/BaiduNetdisk[._-]mac[._-]v?(\d+(?:\.\d+)+)[._-]#{arch}\.dmg/i)
   end
 
   auto_updates true

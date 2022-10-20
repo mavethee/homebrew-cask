@@ -1,6 +1,6 @@
 cask "tiger-trade" do
-  version "7.17.9,20220722,6E3190"
-  sha256 "4a4d010107019caf0e0131ac7bde72c2df1de96c72022f21688f44da6130871b"
+  version "7.20.2,9B36CF"
+  sha256 "7626848e7e27542fbe5c9321b7ff72212d0ddacc49ff47882fecc4e5d48c41bb"
 
   url "https://s.tigerfintech.com/desktop/cdn/f/TigerTrade_#{version.tr(",", "_")}.dmg",
       verified: "s.tigerfintech.com/"
@@ -12,10 +12,10 @@ cask "tiger-trade" do
   livecheck do
     url "https://up.play-analytics.com/app/upgrade/latest?lang=zh_CN&platform=darwin&appVer=1"
     strategy :page_match do |page|
-      match = page.match(/downloadUrl.*?TigerTrade[._-]v?(\d+(?:\.\d+)+)[._-](\d+(?:\.\d+)*)[._-](\h+).dmg/i)
+      match = page.match(/downloadUrl.*?TigerTrade[._-]v?(\d+(?:\.\d+)+)[._-](\h+).dmg/i)
       next if match.blank?
 
-      "#{match[1]},#{match[2]},#{match[3]}"
+      "#{match[1]},#{match[2]}"
     end
   end
 

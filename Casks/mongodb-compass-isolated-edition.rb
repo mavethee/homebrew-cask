@@ -1,8 +1,11 @@
 cask "mongodb-compass-isolated-edition" do
-  version "1.32.5"
-  sha256 "9233e5f3100741df46b97fa7c2c63cda2c8fdfbc6466358464b7a19a95e1ab99"
+  arch arm: "arm64", intel: "x64"
 
-  url "https://downloads.mongodb.com/compass/mongodb-compass-isolated-#{version}-darwin-x64.dmg"
+  version "1.33.1"
+  sha256 arm:   "e7665f693998a4ea9fe824c869fadd27286d71ebbefa64007e554e467ccea34c",
+         intel: "e83d4762c2dbb5e25c89282de89574bd420486c309a900cbf9483c9b6754b7c7"
+
+  url "https://downloads.mongodb.com/compass/mongodb-compass-isolated-#{version}-darwin-#{arch}.dmg"
   name "MongoDB Compass Isolated"
   desc "Explore and manipulate your MongoDB data"
   homepage "https://www.mongodb.com/products/compass"

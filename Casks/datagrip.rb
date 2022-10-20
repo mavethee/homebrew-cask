@@ -1,13 +1,9 @@
 cask "datagrip" do
-  arch = Hardware::CPU.intel? ? "" : "-aarch64"
+  arch arm: "-aarch64"
 
-  version "2022.2,222.3345.83"
-
-  if Hardware::CPU.intel?
-    sha256 "35057e0a2c10522dad144f64b5e66b6b2669c45cad200a4db71fdbaa18347860"
-  else
-    sha256 "6be654c36adf70360a88feb9663bd376fc2639fecc0cf103af76d53c06f5eb8e"
-  end
+  version "2022.2.5,222.4345.5"
+  sha256 arm:   "8ff78e440e4753adc8dbd4ee408fde114f7d9c65ee780f012b917498b63993ee",
+         intel: "cdf0302b0ab65d3dfce4e48004ef45873c9912c844d2e3c82bfe19de2b11cfda"
 
   url "https://download.jetbrains.com/datagrip/datagrip-#{version.csv.first}#{arch}.dmg"
   name "DataGrip"

@@ -1,10 +1,10 @@
 cask "stork" do
-  version "1.0.11,1693"
-  sha256 "cf4a607134e6707522b755fe1fce4b04ff2588c56e6f32d010b0dd918cc793e3"
+  version "1.0.18,1767"
+  sha256 "b901b9e64f386d0b2ac4fa3ae6ee1345e8c226acd178e27a311355fbb87450b3"
 
   url "https://downloads.stork.ai/macos/release/Stork-#{version.csv.first}.#{version.csv.second}.dmg"
-  name "Stork for macOS"
-  desc "Messenger with a powerful features for hybrid work"
+  name "Stork"
+  desc "Messenger with powerful features for hybrid work"
   homepage "https://stork.ai/"
 
   livecheck do

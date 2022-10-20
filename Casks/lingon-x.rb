@@ -3,8 +3,8 @@ cask "lingon-x" do
     version "6.6.5"
     sha256 "b0231b1a98dcc8f5c4234b419c9f5331407b8cce29b33f0ea2e32b12595adfa8"
   else
-    version "8.4.7"
-    sha256 "2e2b34681da745575fd55c24f1f073e690ab3520e28320a837f6afb4c67efb75"
+    version "8.4.9"
+    sha256 "c1c839e8dc13bd295f2080980c5bea22299c33f3333b7c6981161b46d6f021d8"
   end
 
   url "https://www.peterborgapps.com/downloads/LingonX#{version.major}.zip"

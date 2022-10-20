@@ -1,6 +1,6 @@
 cask "melodics" do
-  version "2.1.8058,69E78D74-13B3-4FC3-B490-1241F829ED33"
-  sha256 "eb0c366ed61d3f6f2679782a00f8a0e772c96f181ee1a5c38b7538d3114257c8"
+  version "3.0.8666,8CFA75BD-9A99-4978-B11B-35CFB1E72A2B"
+  sha256 "741afd27625f685866e5a86679bbd5ac438118ad00fcb6edefdd0bf17bacac52"
 
   url "https://web-cdn.melodics.com/download/#{version.csv.second}.zip"
   name "Melodics"
@@ -8,7 +8,7 @@ cask "melodics" do
   homepage "https://melodics.com/"
 
   livecheck do
-    url "https://web-cdn.melodics.com/download/osxupdatescastv#{version.major}.xml"
+    url "https://web-cdn.melodics.com/download/osxupdatescastv2.xml"
     strategy :sparkle do |item|
       "#{item.version},#{item.url[%r{/(\h+(?:-\h+)+)\.zip}i, 1]}"
     end

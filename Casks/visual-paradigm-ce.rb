@@ -1,8 +1,11 @@
 cask "visual-paradigm-ce" do
-  version "16.3,20220622"
-  sha256 "4c030df24a3f06827c137ee4573ba8716935f15ad6e6fd318e4e73c46f412b44"
+  arch arm: "AArch64", intel: "WithJRE"
 
-  url "https://www.visual-paradigm.com/downloads/vpce/Visual_Paradigm_CE_#{version.csv.first.dots_to_underscores}_#{version.csv.second}_OSX_WithJRE.dmg"
+  version "17.0,20221001"
+  sha256 arm:   "5c338022a3d44fbf7672579eafe71917e5d365d0a79126f15d5f6549603b650b",
+         intel: "c727c33b3d55418286882337b3354c0f055ef2e3f6ba61ddebc06422f0eac01f"
+
+  url "https://www.visual-paradigm.com/downloads/vpce/Visual_Paradigm_CE_#{version.csv.first.dots_to_underscores}_#{version.csv.second}_OSX_#{arch}.dmg"
   name "Visual Paradigm Community Edition"
   desc "All-in-one UML, SysML, BPMN Modeling Platform for Agile"
   homepage "https://www.visual-paradigm.com/"

@@ -1,6 +1,6 @@
 cask "sketch" do
-  version "90,149415"
-  sha256 "9ab78fe01480f3f9e683dfbfa57b56e34e28178f47384aa01cf185dd6f0b8de3"
+  version "93,155335"
+  sha256 "0ed07990155486efb67acf17513c35581f3e439fc27aa0021c26a1a433211191"
 
   url "https://download.sketch.com/sketch-#{version.csv.first}-#{version.csv.second}.zip"
   name "Sketch"

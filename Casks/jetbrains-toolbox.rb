@@ -1,13 +1,9 @@
 cask "jetbrains-toolbox" do
-  arch = Hardware::CPU.intel? ? "" : "-arm64"
+  arch arm: "-arm64"
 
-  version "1.25,1.25.12569"
-
-  if Hardware::CPU.intel?
-    sha256 "43fdbf8dd65b62e5ebd5f1be52e840389784035aa7b94e3c50a1977c960abf7e"
-  else
-    sha256 "13a336229057a966a9cdcfaf0699d8eea59b972364f48bb7150e6204f4e8d2ce"
-  end
+  version "1.26.2,1.26.2.13244"
+  sha256 arm:   "5f5f27db1f9a3b53f98c25faaf5bef139d2ca2539e3dd3e562ce540c37913515",
+         intel: "4df76bec1cfb06d9c760afb33cb8a1ecf72dceaa18445fe553a273984cf4f783"
 
   url "https://download.jetbrains.com/toolbox/jetbrains-toolbox-#{version.csv.second}#{arch}.dmg"
   name "JetBrains Toolbox"

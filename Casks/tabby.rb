@@ -1,13 +1,9 @@
 cask "tabby" do
-  arch = Hardware::CPU.intel? ? "x86_64" : "arm64"
+  arch arm: "arm64", intel: "x86_64"
 
-  version "1.0.181"
-
-  if Hardware::CPU.intel?
-    sha256 "f9bb044071a8ecfba7e98919e27e8be645cecb561cf3789feb0e4b69504965d0"
-  else
-    sha256 "550c2f65f9c2be7b737fed905deddc678548e865e1eb99c98ab33c6dbf21a969"
-  end
+  version "1.0.184"
+  sha256 arm:   "aaded8ac525b6a3945f06a789e018368c95112874d6985a34ac8705d1f8eaa74",
+         intel: "c670121c84f19eab809e286f27c4d9922722262cfa4b9611d24cedd347f6808d"
 
   url "https://github.com/Eugeny/tabby/releases/download/v#{version}/tabby-#{version}-macos-#{arch}.zip",
       verified: "github.com/Eugeny/tabby/"
@@ -17,8 +13,8 @@ cask "tabby" do
   homepage "https://eugeny.github.io/tabby/"
 
   livecheck do
-    url :url
-    strategy :github_latest
+    url "https://github.com/Eugeny/tabby/releases/latest"
+    strategy :header_match
   end
 
   auto_updates true

@@ -1,8 +1,8 @@
 cask "grandtotal" do
-  version "7.3.4"
-  sha256 "12325b1e70d3131b93ab3dbc938b206e4e80f0304273cdf7a4ce90c0d8bb53f1"
+  version "7.3.7"
+  sha256 "bdceeae20484ffb892fc9eaa28f9a8ac1107932a5ba8255a89e8b1f77237f8c2"
 
-  url "https://www.mediaatelier.com/GrandTotal#{version.major}/GrandTotal_#{version}.zip"
+  url "https://www.mediaatelier.com/GrandTotal#{version.major}/GrandTotal_#{version}.dmg"
   name "GrandTotal"
   desc "Create invoices and estimates"
   homepage "https://www.mediaatelier.com/GrandTotal#{version.major}/"
