@@ -59,15 +59,25 @@ cask "cocktail" do
       url :homepage
       regex(/macOS\s*11(?:\.\d+)*.*?(\d+(?:\.\d+)+)/i)
     end
-  else
-    version "15.3.7"
-    sha256 "74f0199b99a871ffa7f7be4f96496e5aa03d950dc3a6a8fb948391c770f8e026"
+  elsif MacOS.version <= :monterey
+    version "15.3.8"
+    sha256 "99c401b7c5714c3bcd37c47ce039659e40059af32e8e2c134af23f093685c71b"
 
     url "https://www.maintain.se/downloads/Cocktail#{version.major}ME.dmg"
 
     livecheck do
       url :homepage
       regex(/macOS\s*12(?:\.\d+)*.*?(\d+(?:\.\d+)+)/i)
+    end
+  else
+    version "16.0"
+    sha256 "b20d9b7e93c36fb6290d663e9020cc8775665808b6758ecd4162b2016138af18"
+
+    url "https://www.maintain.se/downloads/Cocktail#{version.major}VE.dmg"
+
+    livecheck do
+      url :homepage
+      regex(/macOS\s*13(?:\.\d+)*.*?(\d+(?:\.\d+)+)/i)
     end
   end
 

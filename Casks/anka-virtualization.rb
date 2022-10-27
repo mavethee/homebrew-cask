@@ -1,5 +1,6 @@
 cask "anka-virtualization" do
-  arch arm: "arm", intel: "intel"
+  arch arm: "-arm", intel: ""
+  livecheck_folder = on_arch_conditional arm: "arm", intel: "intel"
 
   on_intel do
     version "2.5.7.148"
@@ -7,23 +8,23 @@ cask "anka-virtualization" do
     depends_on macos: ">= :big_sur"
   end
   on_arm do
-    version "3.1.0.151"
-    sha256 "6648a9cd0be56fcde4b5c150b2a59e8302306c477ad1a335f1dd56cb8b42a0ce"
+    version "3.1.1.152"
+    sha256 "a1fd1558fc7ba5f9b3c9eb3636e33b1b5c99be79dd6521a491e14b101810e004"
     depends_on macos: ">= :monterey"
   end
 
-  url "https://downloads.veertu.com/anka/Anka-#{version}.pkg"
+  url "https://downloads.veertu.com/anka/Anka-#{version}#{arch}.pkg"
   name "Anka Virtualization"
   desc "CLI tool for managing and creating virtual machines"
   homepage "https://veertu.com/"
 
   livecheck do
-    url "https://veertu.com/downloads/anka-virtualization-#{arch}"
+    url "https://veertu.com/downloads/anka-virtualization-#{livecheck_folder}"
     strategy :header_match
-    regex(/Anka[._-]?v?(\d+(?:\.\d+)+)\.pkg/i)
+    regex(/Anka[._-]?v?(\d+(?:\.\d+)+)#{arch}\.pkg/i)
   end
 
-  pkg "Anka-#{version}.pkg"
+  pkg "Anka-#{version}#{arch}.pkg"
 
   uninstall launchctl: [
               "com.veertu.anka.ankakbd",
