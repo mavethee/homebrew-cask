@@ -1,6 +1,6 @@
 cask "postman-cli" do
-  version "1.0.4"
-  sha256 "01c8082263d23096a10392446da95e245cae107f90d3a8f925558375c53658a8"
+  version "1.0.7"
+  sha256 "5abf0a2eb7d5d73a8d1a2b2fae138cff5335cc051354db2d939118c3160baebd"
 
   url "https://dl-cli.pstmn.io/download/postman-cli-cli-#{version}-macos-x64.zip",
       verified: "dl-cli.pstmn.io/download/"
