@@ -1,16 +1,16 @@
 cask "paper" do
-  version "5.1.9"
-  sha256 "5b22c760262cfb41be40d867ccc92470c7808d4d3c752009d1c190db5eb179cf"
+  version "5.2.6"
+  sha256 "54c5318629932a06580b323406cacef97802e2bad997a03d5bacfbb37feac584"
 
   url "https://s3.nsns.in/dl/paper-v#{version}.dmg",
       verified: "s3.nsns.in/"
   name "pap.er"
   desc "Pap.er, 4K 5K HD Wallpaper Application"
-  homepage "https://paper.photos/"
+  homepage "https://paper.meiyuan.in/"
 
   livecheck do
     url :homepage
-    regex(/href=.*?paper[._-]v?(\d+(?:\.\d+)+)\.dmg/i)
+    regex(/paper[._-]v?(\d+(?:\.\d+)+)\.dmg/i)
   end
 
   auto_updates true

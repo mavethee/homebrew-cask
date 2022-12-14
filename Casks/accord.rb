@@ -1,14 +1,15 @@
 cask "accord" do
-  version "1.6"
-  sha256 "f6307b5e6064bc29bdafac1b320ab4421775bbddc1fd22512a1055accb9cb050"
+  version "1.6.2"
+  sha256 "6fec3c927ce1c874f02e10840359ef5e1dca80c657727a6db243fb3be07128b9"
 
-  url "https://github.com/evelyneee/accord/releases/download/v#{version}/Accord.zip"
+  url "https://github.com/evelyneee/accord/releases/download/v.#{version}/Accord.zip"
   name "accord"
   desc "Discord client written in Swift for modern Macs"
   homepage "https://github.com/evelyneee/accord"
 
   livecheck do
     url :url
+    regex(%r{href=.*?/tag/v?\.?(\d+(?:\.\d+)+)["' >]}i)
     strategy :github_latest
   end
 

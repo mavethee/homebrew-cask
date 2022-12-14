@@ -1,6 +1,6 @@
 cask "principle" do
-  version "6.24,6029"
-  sha256 "d9cf891f442ef892796382a60a291a5545ca406107193b96d36d551411f95488"
+  version "6.27,6032"
+  sha256 "c384d9f2f3b7c2ff31b7a3f8fba93953e8ac3bc6d0a4e283cc88bd7a17f028ab"
 
   url "https://principleformac.com/download/Principle_#{version.csv.first.dots_to_underscores}.zip"
   name "Principle"

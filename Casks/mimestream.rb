@@ -1,6 +1,6 @@
 cask "mimestream" do
-  version "0.39.0"
-  sha256 "48f341375cbf444ef5e5900702febc8243328ce4ee8e83c155e2ae1bc14b1dbe"
+  version "0.40.1"
+  sha256 "d08e8ed48deb7b30adc279d7f002b046850fc5d3b8dfff16bf97a04810c9f6ce"
 
   url "https://download.mimestream.com/Mimestream_#{version}.dmg"
   name "Mimestream"
@@ -13,6 +13,7 @@ cask "mimestream" do
   end
 
   auto_updates true
+  depends_on macos: ">= :big_sur"
 
   app "Mimestream.app"
 

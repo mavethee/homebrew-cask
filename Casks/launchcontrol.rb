@@ -1,21 +1,28 @@
 cask "launchcontrol" do
-  if MacOS.version <= :catalina
+  on_catalina :or_older do
     version "1.52.7,1959"
-    sha256 "1f9039a66a8ac17573c6501a59bb01e02fd78ec70eea3316bff03f87370773e5"
-  else
-    version "2.0.1,2277"
-    sha256 "4f260e9bd4450abfed038098fffbc7f6de488da95e68fc38857597466d9db8cb"
+    sha256 "16c3d89e41a99cbf43e6996681358e8e7a4bc63fa770b9f8c0bc72c5356a0b8a"
+
+    livecheck do
+      skip "Legacy version"
+    end
+  end
+  on_big_sur :or_newer do
+    version "2.0.4,2316"
+    sha256 "11efcf08a067622697ed80a339b21612e228c606f5c5ee9ec5bb04a61d21e880"
+
+    livecheck do
+      url "https://www.soma-zone.com/LaunchControl/a/appcast-update-2.xml"
+      strategy :sparkle
+    end
+
+    depends_on macos: ">= :big_sur"
   end
 
   url "https://www.soma-zone.com/download/files/LaunchControl-#{version.csv.first}.tar.xz"
   name "LaunchControl"
   desc "Create, manage and debug system- and user services"
   homepage "https://www.soma-zone.com/LaunchControl/"
-
-  livecheck do
-    url "https://www.soma-zone.com/LaunchControl/a/appcast-update-2.xml"
-    strategy :sparkle
-  end
 
   auto_updates true
 
