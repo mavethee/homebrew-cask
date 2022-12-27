@@ -1,9 +1,9 @@
 cask "visual-studio-code" do
   arch arm: "darwin-arm64", intel: "darwin"
 
-  version "1.74.0"
-  sha256 arm:   "c445b11b835598c5c01f01337ca2e66020989b483cfbb132c75908cde11c182c",
-         intel: "1c6f4955b74941a21a36c2721640af7695187336417df13f80c1826a34ceb0b4"
+  version "1.74.2"
+  sha256 arm:   "bc8ba4ac5230178a6bc9d0da4f953264d107eadf5425cffd042d2c845f3464a0",
+         intel: "2e78296ee0cbe0ef5267a34d96d5870fadb65aa688b90ce2b469784c4671f949"
 
   url "https://update.code.visualstudio.com/#{version}/#{arch}/stable"
   name "Microsoft Visual Studio Code"
