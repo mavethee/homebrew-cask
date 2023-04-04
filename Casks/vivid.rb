@@ -1,16 +1,16 @@
 cask "vivid" do
-  version "2.4.1,36"
-  sha256 "e64cc2286805df56970d72a079eca2de9ee2a5ace4e14d9e434ef3f83e66bb25"
+  version "2.5"
+  sha256 "9ec5a14c727028941ae0389101994be98d45ae00058195e8a6ed3c05521e0504"
 
-  url "https://lumen-digital.com/apps/vivid/releases/Vivid#{version.csv.first}.zip",
-      verified: "https://lumen-digital.com/apps/vivid"
+  url "https://lumen-digital.com/apps/vivid/releases/Vivid#{version}.zip",
+      verified: "lumen-digital.com/apps/vivid/releases/"
   name "Vivid"
   desc "Adaptive brightness for displays"
   homepage "https://www.getvivid.app/"
 
   livecheck do
     url "https://lumen-digital.com/apps/vivid/appcast.xml"
-    strategy :sparkle
+    strategy :sparkle, &:short_version
   end
 
   app "Vivid.app"

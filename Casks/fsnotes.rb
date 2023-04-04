@@ -1,6 +1,6 @@
 cask "fsnotes" do
-  version "6.0.6"
-  sha256 "6c95eca829195b9e0090c7e507b8c38f28a5a2d1949206189aaa5bd1fa1fdaef"
+  version "6.2.2"
+  sha256 "821dd7891f7e40b5aad26ea6bcea93e7b2b042cb27c56d55651dda636fa04709"
 
   url "https://github.com/glushchenko/fsnotes/releases/download/#{version}/FSNotes_#{version}.zip",
       verified: "github.com/glushchenko/fsnotes/"
@@ -11,7 +11,6 @@ cask "fsnotes" do
   livecheck do
     url :url
     strategy :github_latest
-    regex(%r{href=.*?/tag/v?(\d+(?:\.\d+)+)["' >]}i)
   end
 
   app "FSNotes.app"

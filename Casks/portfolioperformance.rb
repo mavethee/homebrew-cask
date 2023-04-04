@@ -1,9 +1,9 @@
 cask "portfolioperformance" do
   arch arm: "aarch64", intel: "x86_64"
 
-  version "0.60.1"
-  sha256 arm:   "413b26a12f424770d5f97d751fafc924467183c483104f5c0b7dadc7f13ed1c1",
-         intel: "be6a9ad2076799402b6811e9abdd4b1002ea6fc5e6f0575e6394a5118005d234"
+  version "0.62.0"
+  sha256 arm:   "b28a54c5a5c9fa137cb31cd16f7e8fa82960e9ccbc15d0fc500bf140355d2e4d",
+         intel: "45730f2b1de71b98827a6a80adc76d71cc31d254c028aa5f670af0a10aa45781"
 
   url "https://github.com/buchen/portfolio/releases/download/#{version}/PortfolioPerformance-#{version}-#{arch}.dmg",
       verified: "github.com/buchen/portfolio/"
@@ -13,10 +13,16 @@ cask "portfolioperformance" do
 
   livecheck do
     url :url
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
+    strategy :github_latest
   end
 
   auto_updates true
 
   app "PortfolioPerformance.app"
+
+  zap trash: [
+    "~/Library/Application Support/name.abuchen.portfolio.product",
+    "~/Library/Caches/name.abuchen.portfolio.distro.product",
+    "~/Library/Preferences/name.abuchen.portfolio.distro.product.plist",
+  ]
 end

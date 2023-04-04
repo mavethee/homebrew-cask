@@ -1,18 +1,18 @@
 cask "feishu" do
   arch arm: "arm64", intel: "x64"
 
-  on_intel do
-    version "5.28.7,e4bbd57f"
-    sha256 "2ac4878ec10983e89da7bcd1d94827049d3ffbe01cc71643705a7d48f73407a1"
-  end
   on_arm do
-    version "5.28.7,271bbdc0"
-    sha256 "f7802490b3d0d69e5cfd6c709c59f8eeff59f33585f81663c28c94c2aa943fcd"
+    version "6.1.5,f151d281"
+    sha256 "0d4376f3fb999189fbec0011806ad555c8732391ec97926ef638da6fdc973b12"
+  end
+  on_intel do
+    version "6.1.5,b984f2d4"
+    sha256 "770f3a1aba9be187be6cb85ca803ea4994094157118608c3d352b763c2c35883"
   end
 
   url "https://sf3-cn.feishucdn.com/obj/ee-appcenter/#{version.csv.second}/Feishu-darwin_#{arch}-#{version.csv.first}-signed.dmg",
-      verified: "sf3-cn.feishucdn.com/"
-  name "feishu"
+      verified: "sf3-cn.feishucdn.com/obj/ee-appcenter/"
+  name "Feishu"
   desc "Project management software"
   homepage "https://www.feishu.cn/"
 

@@ -1,6 +1,6 @@
 cask "trilium-notes" do
-  version "0.57.5"
-  sha256 "fde732bb60f7582763d64c7d25fef034084a862a2a656e3097edef6e4ae0fff7"
+  version "0.59.3"
+  sha256 "362e2af335967209038231f088a3097da7f58e6e2d433f329b9bf44c68aaba2d"
 
   url "https://github.com/zadam/trilium/releases/download/v#{version}/trilium-mac-x64-#{version}.zip"
   name "Trilium Notes"
@@ -13,4 +13,11 @@ cask "trilium-notes" do
   end
 
   app "trilium-mac-x64/Trilium Notes.app"
+
+  zap trash: [
+    "~/Library/Application Support/Trilium Notes",
+    "~/Library/Application Support/trilium-data",
+    "~/Library/Preferences/com.electron.trilium-notes.plist",
+    "~/Library/Saved Application State/com.electron.trilium-notes.savedState",
+  ]
 end

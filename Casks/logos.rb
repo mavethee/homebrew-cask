@@ -1,18 +1,18 @@
 cask "logos" do
   arch arm: "-arm"
 
-  version "10.1.0.0056"
-  sha256 arm:   "ae992c1e6ecbce8113044aa31838c4bc91b87083585c75ae7271eaaff13ad5db",
-         intel: "0bffc3463c81e4448b4125e4418b68ca5aab4ae011faf8ecbfd905c09d3c0631"
+  version "24.0.0.0014"
+  sha256 arm:   "a4c6b2aa7b7ee337df1039885ac228fdaae05867075c716c87028dba440b469f",
+         intel: "1069a15619ce0ed7b8d0258b3adb8bb97817c3baba48bee7df326fa1c1952c20"
 
-  url "https://downloads.logoscdn.com/LBS#{version.major}/Installer/#{version}/LogosMac#{arch}.dmg",
+  url "https://downloads.logoscdn.com/LBS10/Installer/#{version}/LogosMac#{arch}.dmg",
       verified: "downloads.logoscdn.com/"
   name "Logos"
   desc "Bible study software"
   homepage "https://www.logos.com/"
 
   livecheck do
-    url "https://clientservices.logos.com/update/v1/feed/logos#{version.major}-mac/stable.xml"
+    url "https://clientservices.logos.com/update/v1/feed/logos10-mac/stable.xml"
     regex(%r{<logos:version[^>]*>(\d+(?:\.\d+)+)</logos:version>}i)
   end
 

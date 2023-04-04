@@ -1,9 +1,9 @@
 cask "kotlin-native" do
   arch arm: "aarch64", intel: "x86_64"
 
-  version "1.7.22"
-  sha256 arm:   "4ffcd76c77cc824eff8addd5e2a73da4f3bbd3584fa9ef282b3f669c45426b1e",
-         intel: "153fa411fa8c993ce2635e2504e9b102cb05362cc794b66ef9def26a78b427b5"
+  version "1.8.20"
+  sha256 arm:   "becc0f4367ae8854f33546efff40767cc2cb227da0cd7935a9a6784e9a2736d2",
+         intel: "e39e801eb8ae2e86a8fe0b5ee32535bf176fd284b6f6883a431cafbb27684055"
 
   url "https://github.com/JetBrains/kotlin/releases/download/v#{version}/kotlin-native-macos-#{arch}-#{version}.tar.gz",
       verified: "github.com/JetBrains/kotlin/"
@@ -24,10 +24,10 @@ cask "kotlin-native" do
   binary "kotlin-native-macos-#{arch}-#{version}/bin/klib"
   binary "kotlin-native-macos-#{arch}-#{version}/bin/konan-lldb"
   binary "kotlin-native-macos-#{arch}-#{version}/bin/konanc"
-  binary "kotlin-native-macos-#{arch}-#{version}/bin/kotlinc"
   binary "kotlin-native-macos-#{arch}-#{version}/bin/kotlinc-native"
   binary "kotlin-native-macos-#{arch}-#{version}/bin/run_konan"
 
+  # No zap stanza required
   caveats do
     depends_on_java "6+"
   end

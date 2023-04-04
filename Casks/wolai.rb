@@ -1,9 +1,9 @@
 cask "wolai" do
   arch arm: "-arm64"
 
-  version "1.2.3"
-  sha256 arm:   "7df19bc987f827855524c2250fe81ca478aa05239c448060104c57a4cb30d277",
-         intel: "e33b49fb41a264006d3e59b3ffad431f6aa1e70be24d0a2d07b9c128bf17f5b9"
+  version "1.2.6"
+  sha256 arm:   "010f108e6fdc4751f0ad2b05a92eb5cde0970c5cbad8a8f5105ab00425f0a2f0",
+         intel: "bb24a412f15f7a5e9e10413bc360507d5153d46d1cabbf5b072976a45081487f"
 
   url "https://cdn.wostatic.cn/dist/installers/wolai-#{version}#{arch}.dmg",
       verified: "cdn.wostatic.cn/dist/installers/"

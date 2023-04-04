@@ -1,6 +1,6 @@
 cask "ultimaker-cura" do
-  version "5.2.1"
-  sha256 "2d8a48bd060f822ad7ef2ec1e4a1853d10e7478460738406fc376c594bd08061"
+  version "5.3.0"
+  sha256 "fc447d5ff8ed8d1be72611878afa7a151c6cdc5a3f79d7d5503a094d408b1cd5"
 
   url "https://github.com/Ultimaker/Cura/releases/download/#{version}/Ultimaker-Cura-#{version}-mac.dmg",
       verified: "github.com/Ultimaker/Cura/"
@@ -14,7 +14,7 @@ cask "ultimaker-cura" do
     strategy :github_latest
   end
 
-  app "Ultimaker-Cura.app"
+  app "UltiMaker Cura.app"
 
   uninstall quit: "nl.ultimaker.cura.dmg"
 

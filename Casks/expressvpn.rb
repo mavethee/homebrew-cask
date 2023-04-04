@@ -1,6 +1,6 @@
 cask "expressvpn" do
-  version "11.15.0.71532"
-  sha256 "25e056692960ffbd9b56f8d414a0d5f7f84638e74ef5a72fbfdcb14db82e86d7"
+  version "11.26.0.74548"
+  sha256 "f8acb7060e1d7b950b8b749c9007beac597a201e1ebaaa820eac6e2fdb6da333"
 
   url "https://www.expressvpn.works/clients/mac/expressvpn_mac_#{version}_release.pkg"
   name "ExpressVPN"
@@ -12,8 +12,6 @@ cask "expressvpn" do
     strategy :header_match
   end
 
-  auto_updates true
-
   pkg "expressvpn_mac_#{version}_release.pkg"
 
   uninstall launchctl: "com.expressvpn.ExpressVPN.agent",
@@ -23,4 +21,13 @@ cask "expressvpn" do
               sudo:       true,
             },
             pkgutil:   "com.expressvpn.ExpressVPN"
+
+  zap trash: [
+    "/Library/Application Support/com.expressvpn.ExpressVPN",
+    "/Library/LaunchDaemons/com.expressvpn.expressvpnd.plist",
+    "~/Library/Application Support/com.expressvpn.ExpressVPN",
+    "~/Library/HTTPStorages/com.expressvpn.ExpressVPN",
+    "~/Library/Logs/ExpressVPN",
+    "~/Library/Preferences/com.expressvpn.ExpressVPN.plist",
+  ]
 end

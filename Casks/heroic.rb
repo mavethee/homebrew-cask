@@ -7,8 +7,8 @@ cask "heroic" do
 
   url "https://github.com/Heroic-Games-Launcher/HeroicGamesLauncher/releases/download/v#{version}/Heroic-#{version}-macOS-#{arch}.dmg"
   name "Heroic Games Launcher"
-  desc "Open Source Game Launcher"
-  homepage "https://github.com/Heroic-Games-Launcher/HeroicGamesLauncher"
+  desc "Game launcher"
+  homepage "https://github.com/Heroic-Games-Launcher/HeroicGamesLauncher/"
 
   app "Heroic.app"
 

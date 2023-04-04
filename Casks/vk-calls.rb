@@ -1,15 +1,15 @@
 cask "vk-calls" do
-  version "1.1.10103"
-  sha256 :no_check
+  version "1.2.12374"
+  sha256 "de430141cc487cdfec8e3bf989eeaa7a31215a1e184153b55f68861a2c5c0f68"
 
-  url "https://vkcalls-native-ac.vk-apps.com/latest/vk-calls.dmg",
-      verified: "vkcalls-native-ac.vk-apps.com"
+  url "https://vkcalls-native-ac.vk-apps.com/#{version}/vk-calls.dmg",
+      verified: "vkcalls-native-ac.vk-apps.com/"
   name "VK Calls"
   desc "Platform for video calls of any purpose"
   homepage "https://calls.vk.com/"
 
   livecheck do
-    url :url
+    url "https://vkcalls-native-ac.vk-apps.com/latest/vk-calls.dmg"
     strategy :extract_plist
   end
 

@@ -1,16 +1,14 @@
 cask "anka-virtualization" do
-  arch arm: "-arm", intel: ""
+  arch arm: "-arm", intel: "-intel"
   livecheck_folder = on_arch_conditional arm: "arm", intel: "intel"
 
-  on_intel do
-    version "2.5.7.148"
-    sha256 "e600e8144f5ca5134aa94785bc9bbc567193b1065944573df9cc9daf7d8f796e"
-    depends_on macos: ">= :big_sur"
-  end
   on_arm do
-    version "3.2.0.153"
-    sha256 "83d881b76136b64064fa6201906c75404e4df618360ca08b9765e39b890bf388"
-    depends_on macos: ">= :monterey"
+    version "3.2.2.158"
+    sha256 "19edf4e1802ef9925d6f4df5335f9963b911a8b1c99b1f387255062b3f21f292"
+  end
+  on_intel do
+    version "3.2.1.155"
+    sha256 "5d78b31d318238d5289a887922ebdb65bdda20ea25fcb2dfab82a24cce4aabc6"
   end
 
   url "https://downloads.veertu.com/anka/Anka-#{version}#{arch}.pkg"
@@ -20,9 +18,11 @@ cask "anka-virtualization" do
 
   livecheck do
     url "https://veertu.com/downloads/anka-virtualization-#{livecheck_folder}"
-    strategy :header_match
     regex(/Anka[._-]?v?(\d+(?:\.\d+)+)#{arch}\.pkg/i)
+    strategy :header_match
   end
+
+  depends_on macos: ">= :monterey"
 
   pkg "Anka-#{version}#{arch}.pkg"
 

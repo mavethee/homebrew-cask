@@ -1,8 +1,11 @@
 cask "bootstrap-studio" do
-  version "6.2.1"
-  sha256 "2f504663e5ca5288acc92ee38f27b4c7ee1fb9551655c0a34707ee8207b07132"
+  arch arm: "arm64", intel: "x64"
 
-  url "https://bootstrapstudio.io/releases/desktop/#{version}/Bootstrap%20Studio.dmg"
+  version "6.4.0"
+  sha256 arm:   "d0ac4b99d436bdd7b99368152ced9393ad7d655cbba410c17f176c23d67b6b26",
+         intel: "7f153f6e46a5770f1926fd71b92ead7ff7e80324a42863bf52798112cb5bb197"
+
+  url "https://releases.bootstrapstudio.io/#{version}/Bootstrap%20Studio%20(#{arch}).dmg"
   name "Bootstrap Studio"
   desc "Design and prototype websites using the Bootstrap framework"
   homepage "https://bootstrapstudio.io/"

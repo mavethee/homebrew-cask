@@ -1,7 +1,7 @@
 cask "sizzy" do
   arch arm: "arm64", intel: "intel"
 
-  version "70.4.0"
+  version "70.6.0"
   sha256 :no_check
 
   url "https://proxy.sizzy.co/updates/download/mac?arch=#{arch}"
@@ -11,8 +11,8 @@ cask "sizzy" do
 
   livecheck do
     url :url
-    strategy :header_match
     regex(/Sizzy[._-]v?(\d+(?:\.\d+)+)(?:[._-]#{arch})?\.dmg/i)
+    strategy :header_match
   end
 
   auto_updates true

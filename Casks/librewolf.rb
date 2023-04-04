@@ -1,17 +1,17 @@
 cask "librewolf" do
   arch arm: "aarch64", intel: "x86_64"
 
-  on_intel do
-    version "108.0.1,1,10d6ee021ccac483197925632aca49dc"
-    sha256 "e7cbf33d5830b7136dbdd106a0eb0e6da08849547b961016efd2e558122b3ca5"
-  end
   on_arm do
-    version "108.0.1,1,7168f90ec912f31080baf5840e1e36f9"
-    sha256 "73c4dc47248c20a3864c86973aad3cdad144778823aeec8be75fe187a42dfb9c"
+    version "111.0.1,1,1df5f9939d2c78b3ca0d59948ace0502"
+    sha256 "44819bec19b6b6c9bef5bca0c99ccc482c6adc6a830184f68f904d4d76fbf478"
+  end
+  on_intel do
+    version "111.0.1,1,94e569d180182fa68167550cc98a78d5"
+    sha256 "9ae8ee85d5b591d1b03bd7b0b45802af59b4c5a97898e5672fe9322ff4fb6c41"
   end
 
   url "https://gitlab.com/librewolf-community/browser/macos/uploads/#{version.csv.third}/librewolf-#{version.csv.first}-#{version.csv.second}.en-US.mac.#{arch}.dmg",
-      verified: "gitlab.com/librewolf-community/browser/macos/"
+      verified: "gitlab.com/librewolf-community/browser/macos/uploads/"
   name "LibreWolf"
   desc "Web browser"
   homepage "https://librewolf.net/"
@@ -27,6 +27,16 @@ cask "librewolf" do
   end
 
   app "LibreWolf.app"
+  # shim script (https://github.com/Homebrew/homebrew-cask/issues/18809)
+  shimscript = "#{staged_path}/librewolf.wrapper.sh"
+  binary shimscript, target: "librewolf"
+
+  preflight do
+    File.write shimscript, <<~EOS
+      #!/bin/sh
+      exec '#{appdir}/LibreWolf.app/Contents/MacOS/librewolf' "$@"
+    EOS
+  end
 
   zap trash: [
     "~/.librewolf",

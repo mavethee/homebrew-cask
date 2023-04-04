@@ -1,17 +1,17 @@
 cask "loom" do
   arch arm: "-arm64"
 
-  version "0.148.0"
-  sha256 arm:   "291cc7e9aa40153583277936a51b8b0ed6cc35d9f04e1638d0cc4af8b97c8e01",
-         intel: "2282e2870c8b2719210aff4a0fa22d21c6e3a92c65579d399a73379f8d104682"
+  version "0.159.5"
+  sha256 arm:   "e4e26f7c16e66d39f806b06316379e1eec168835e10ed85fa8beb75a5eb8a6c5",
+         intel: "b5d9b93abff813c814fe0ea4958f31645709ff13106f331d841f41d742d1ece4"
 
-  url "https://cdn.loom.com/desktop-packages/Loom-#{version}#{arch}.dmg"
+  url "https://packages.loom.com/desktop-packages/Loom-#{version}#{arch}.dmg"
   name "Loom"
   desc "Screen and video recording software"
   homepage "https://www.loom.com/"
 
   livecheck do
-    url "https://s3-us-west-2.amazonaws.com/loom.desktop.packages/loom-inc-production/desktop-packages/latest-mac.yml"
+    url "https://packages.loom.com/desktop-packages/latest-mac.yml"
     strategy :electron_builder
   end
 

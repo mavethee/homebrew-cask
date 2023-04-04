@@ -1,6 +1,6 @@
 cask "fig" do
-  version "2.10.1"
-  sha256 "53eba911ec1763af06bf0170d4981d416cc55e52ce5f11a10134e9f3751f3b64"
+  version "2.15.0"
+  sha256 "d32a5848fb68f93d402f660fa3182f940b2df2719fa3f111a72fcc2fe5874bcc"
 
   url "https://repo.fig.io/generic/stable/asset/#{version}/universal/fig.dmg"
   name "fig"
@@ -9,8 +9,8 @@ cask "fig" do
 
   livecheck do
     url "https://repo.fig.io/generic/stable/index.json"
-    strategy :page_match do |page|
-      JSON.parse(page)["hints"]["livecheck"]
+    strategy :json do |json|
+      json["hints"]["livecheck"]
     end
   end
 
@@ -34,21 +34,17 @@ cask "fig" do
               "io.fig.cursor",
             ]
 
-  zap script: {
-        executable: "#{appdir}/Fig.app/Contents/MacOS/fig-darwin-universal",
-        args:       ["_", "brew-uninstall", "--zap"],
-      },
-      trash:  [
-        "~/.fig",
-        "~/.fig.dotfiles.bak",
-        "~/Library/Application Support/com.mschrage.fig",
-        "~/Library/Application Support/fig",
-        "~/Library/Caches/com.mschrage.fig",
-        "~/Library/Caches/fig",
-        "~/Library/HTTPStorages/com.mschrage.fig",
-        "~/Library/Preferences/com.mschrage.fig.*",
-        "~/Library/WebKit/com.mschrage.fig",
-      ]
+  zap trash: [
+    "~/.fig",
+    "~/.fig.dotfiles.bak",
+    "~/Library/Application Support/com.mschrage.fig",
+    "~/Library/Application Support/fig",
+    "~/Library/Caches/com.mschrage.fig",
+    "~/Library/Caches/fig",
+    "~/Library/HTTPStorages/com.mschrage.fig",
+    "~/Library/Preferences/com.mschrage.fig.*",
+    "~/Library/WebKit/com.mschrage.fig",
+  ]
 
   caveats <<~EOS
     Please launch the Fig application to finish setup...

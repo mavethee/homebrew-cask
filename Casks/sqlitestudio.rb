@@ -1,6 +1,6 @@
 cask "sqlitestudio" do
-  version "3.4.1"
-  sha256 "390515c168fc9392881c62ed72343bda457baab66cf9865796786b0f5642f1ad"
+  version "3.4.3"
+  sha256 "3f66189b6450675beaef3ae626bf8759b3f206695a49586bb4e0fb47953e2ecf"
 
   url "https://github.com/pawelsalawa/sqlitestudio/releases/download/#{version}/SQLiteStudio-#{version}.dmg",
       verified: "github.com/pawelsalawa/sqlitestudio/releases/download/"
@@ -8,12 +8,13 @@ cask "sqlitestudio" do
   desc "Create, edit, browse SQLite databases"
   homepage "https://sqlitestudio.pl/"
 
-  auto_updates true
-
   app "SQLiteStudio.app"
 
   zap trash: [
     "~/.config/sqlitestudio",
+    "~/Library/Preferences/pl.com.salsoft.SQLiteStudio.plist",
+    "~/Library/Preferences/SalSoft/SQLiteStudio/",
     "~/Library/Saved Application State/com.yourcompany.SQLiteStudio.savedState",
+    "~/Library/Saved Application State/pl.com.salsoft.SQLiteStudio.savedState",
   ]
 end

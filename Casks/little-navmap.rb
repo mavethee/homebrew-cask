@@ -1,6 +1,6 @@
 cask "little-navmap" do
-  version "2.8.7"
-  sha256 "f484f57ac0325088fd329a81477854676c2182112ee9380d6fdfa1d96a18b346"
+  version "2.8.9"
+  sha256 "b400a468eaf969c3aa78dd87bf69ff0880ddf1bc8b54a4d89ccc07604eaa3c46"
 
   url "https://github.com/albar965/littlenavmap/releases/download/v#{version}/LittleNavmap-macOS-#{version}.zip",
       verified: "github.com/albar965/littlenavmap/"
@@ -10,6 +10,11 @@ cask "little-navmap" do
 
   app "Little Navmap.app"
   app "Little Navconnect.app"
+
+  zap trash: [
+    "~/Library/Saved Application State/com.yourcompany.littlenavmap.savedState",
+    "~/.config/ABarthel",
+  ]
 
   caveats "The X-Plane plugin will be at #{staged_path} after installation."
 end

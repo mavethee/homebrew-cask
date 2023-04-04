@@ -1,6 +1,6 @@
 cask "wezterm" do
-  version "20221119-145034,49b9839f"
-  sha256 "6b7fd6abe5ccf129584bb2f0887a83c07c3ae4aba82fbb820a7d8e092a9835d4"
+  version "20230326-111934,3666303c"
+  sha256 "06d38d0c4fca4fad8c1af3d3a8c42d0b976cd2202cc5341a014d33fc583fbd87"
 
   url "https://github.com/wez/wezterm/releases/download/#{version.csv.first}-#{version.csv.second}/WezTerm-macos-#{version.csv.first}-#{version.csv.second}.zip",
       verified: "github.com/wez/wezterm/"
@@ -16,7 +16,9 @@ cask "wezterm" do
     end
   end
 
-  app "WezTerm-macos-#{version.csv.first}-#{version.csv.second}/WezTerm.app"
+  conflicts_with cask: "homebrew/cask-versions/wezterm-nightly"
+
+  app "WezTerm.app"
 
   %w[
     wezterm
@@ -27,9 +29,14 @@ cask "wezterm" do
     binary "#{appdir}/WezTerm.app/Contents/MacOS/#{tool}"
   end
 
-  zap trash: [
-    "~/.config/wezterm/",
-    "~/.wezterm.lua",
-    "~/Library/Saved Application State/com.github.wez.wezterm.savedState",
-  ]
+  preflight do
+    # Move "WezTerm-macos-#{version}/WezTerm.app" out of the subfolder
+    staged_subfolder = staged_path.glob(["WezTerm-*", "wezterm-*"]).first
+    if staged_subfolder
+      FileUtils.mv(staged_subfolder/"WezTerm.app", staged_path)
+      FileUtils.rm_rf(staged_subfolder)
+    end
+  end
+
+  zap trash: "~/Library/Saved Application State/com.github.wez.wezterm.savedState"
 end

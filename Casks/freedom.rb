@@ -1,15 +1,15 @@
 cask "freedom" do
-  version "2.13.2,2106"
-  sha256 "41a4be4cc0d9ff765ab4ab9d39908187ae889fb323c4aa273a365bf84e76bede"
+  version "2.13.2"
+  sha256 "e3402f092cf0c95b5b3fd957042f54a1bb85c51c9947d7d5c464956ed74830bc"
 
-  url "https://cdn.freedom.to/installers/updates/mac/#{version.csv.first}/Freedom.zip"
+  url "https://cdn.freedom.to/installers/updates/mac/#{version}/Freedom.zip"
   name "Freedom"
   desc "App and website blocker"
   homepage "https://freedom.to/"
 
   livecheck do
     url "https://cdn.freedom.to/installers/updates/mac/Appcast.xml"
-    strategy :sparkle
+    strategy :sparkle, &:short_version
   end
 
   auto_updates true

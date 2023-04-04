@@ -1,6 +1,6 @@
 cask "atomic-wallet" do
-  version "2.62.3"
-  sha256 "27697e407b201776efaa32ed55f4913650f9f6db6552fbfade5c9673c8dc0969"
+  version "2.68.5"
+  sha256 "e39ab52bf84700fbc8d68d5fc77e8d63ec29b4961c0eb48a98173c91560162db"
 
   url "https://get.atomicwallet.io/download/atomicwallet-#{version}.dmg"
   name "Atomic Wallet"
@@ -9,7 +9,6 @@ cask "atomic-wallet" do
 
   livecheck do
     url "https://get.atomicwallet.io/download/"
-    strategy :page_match
     regex(/href=.*?atomicwallet[._-](\d+(?:\.\d+)+[._-]\d+)\.dmg/i)
   end
 

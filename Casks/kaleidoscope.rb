@@ -1,6 +1,6 @@
 cask "kaleidoscope" do
-  version "3.8,2132"
-  sha256 "b8407246c523dc27610726c7365bd739fed869cf203a4a2591b6cc150c19cedb"
+  version "3.8.1,2146"
+  sha256 "27d5ef03b15194c7e75f77a9ee578c6f3a44533b61f0919d95de2746eb9bf26f"
 
   url "https://updates.kaleidoscope.app/v#{version.major}/prod/Kaleidoscope-#{version.csv.first}-#{version.csv.second}.app.zip"
   name "Kaleidoscope"
@@ -16,10 +16,23 @@ cask "kaleidoscope" do
   end
 
   auto_updates true
-  conflicts_with cask: "homebrew/cask-versions/kaleidoscope2"
+  conflicts_with cask: [
+    "ksdiff",
+    "homebrew/cask-versions/kaleidoscope2",
+    "homebrew/cask-versions/ksdiff2",
+  ]
   depends_on macos: ">= :big_sur"
 
   app "Kaleidoscope.app"
+
+  postflight do
+    contents = "#{appdir}/Kaleidoscope.app/Contents"
+    system_command "#{contents}/Resources/Integration/scripts/install_ksdiff",
+                   args: ["#{contents}/MacOS", "#{HOMEBREW_PREFIX}/bin"]
+  end
+
+  uninstall quit:    "app.kaleidoscope.v#{version.major}",
+            pkgutil: "app.kaleidoscope.uninstall_ksdiff"
 
   zap trash: [
     "~/Library/Application Support/app.kaleidoscope.v*",

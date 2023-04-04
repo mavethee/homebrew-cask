@@ -1,9 +1,9 @@
 cask "kui" do
   arch arm: "arm64", intel: "x64"
 
-  version "12.2.0"
-  sha256 arm:   "74fcfa060ddd6beae2ce620f917e0f75436eabd09ca32317bd6f47d8e3eaa145",
-         intel: "e1d246b8d0daaa3e03378f3d0cb826363ee985a7f26e1fe02e3e533c65e59857"
+  version "13.1.3"
+  sha256 arm:   "eb3f5d77f59bdf6c6079eda955e8f0aaa2988f52f5d2951632fce48eb4cdce81",
+         intel: "cec6e3b978687fead6c0cca73fbba5dd62ce9c3d66b5b51df765434c5f85cce0"
 
   url "https://github.com/kubernetes-sigs/kui/releases/download/v#{version}/Kui-darwin-#{arch}.tar.bz2"
   name "Kui"

@@ -1,15 +1,10 @@
 cask "notion" do
   arch arm: "-arm64"
-  livecheck_folder = on_arch_conditional arm: "apple-silicon", intel: "mac"
+  livecheck_folder = on_arch_conditional arm: "arm64", intel: "latest"
 
-  on_intel do
-    version "2.1.11"
-    sha256 "c9eab7cca6d63b2869010010659e37d6cafa13f07c1c4fe21e859c15accbb546"
-  end
-  on_arm do
-    version "2.1.11"
-    sha256 "c2d2cb58e85d9de250fd0dad75491ba1e1eb2d9c65a469121a09b9f1b285507c"
-  end
+  version "2.1.13"
+  sha256 arm:   "658125c5d2df38e82a0b416dd0f0e516efdde85ebda8a103c26665bf87fe5af5",
+         intel: "e49e06c30779f4252e55f3b357d92904b8cc0475e0b7461598d0c9a1082c08f2"
 
   url "https://desktop-release.notion-static.com/Notion-#{version}#{arch}.dmg",
       verified: "desktop-release.notion-static.com/"
@@ -18,9 +13,8 @@ cask "notion" do
   homepage "https://www.notion.so/"
 
   livecheck do
-    url "https://www.notion.so/desktop/#{livecheck_folder}/download"
-    strategy :header_match
-    regex(/Notion[._-]v?(\d+(?:\.\d+)*?)[^.]*?\.dmg/i)
+    url "https://desktop-release.notion-static.com/#{livecheck_folder}-mac.yml"
+    strategy :electron_builder
   end
 
   auto_updates true
@@ -30,8 +24,9 @@ cask "notion" do
   zap trash: [
     "~/Library/Application Support/Caches/notion-updater",
     "~/Library/Application Support/Notion",
-    "~/Library/Caches/notion.id",
+    "~/Library/Caches/notion.id*",
     "~/Library/Logs/Notion",
+    "~/Library/Preferences/ByHost/notion.id.*.plist",
     "~/Library/Preferences/notion.id.helper.plist",
     "~/Library/Preferences/notion.id.plist",
     "~/Library/Saved Application State/notion.id.savedState",

@@ -1,9 +1,9 @@
 cask "dcv-viewer" do
   arch arm: "arm64", intel: "x86_64"
 
-  version "2022.2.4804"
-  sha256 arm:   "67725ce47238c2becc0207abfd4c4abbaa7f44c32ff3f1d21545502f35914559",
-         intel: "303bcc7d4f7ff9667ec7a08392336abc25e506ce7c211d0fbccea6c06472a3c3"
+  version "2023.0.5388"
+  sha256 arm:   "aa664184eb59becee53d6ae6ee6fd132410945aa0bae0b97ede0271a1b89844e",
+         intel: "5d31d07a0a895a08473ebfac901b2f24ecb4f783e0921f4599f3ce02e3f70256"
 
   url "https://d1uj6qtbmh3dt5.cloudfront.net/#{version.major_minor}/Clients/nice-dcv-viewer-#{version}.#{arch}.dmg",
       verified: "d1uj6qtbmh3dt5.cloudfront.net/"

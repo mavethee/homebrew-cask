@@ -1,6 +1,6 @@
 cask "rwts-pdfwriter" do
-  version "2.0"
-  sha256 "3ceb2219db6f279b2c6b1bc53a34b2ac6a919c4650143a825408ba59489e7915"
+  version "3.1"
+  sha256 "71e5f4828d04f524901a758779e1cf13d6b09c59f5796dd5ba8d1f199086a221"
 
   url "https://github.com/rodyager/RWTS-PDFwriter/releases/download/v#{version}/RWTS-PDFwriter.pkg"
   name "RWTS PDFwriter"
@@ -9,5 +9,8 @@ cask "rwts-pdfwriter" do
 
   pkg "RWTS-PDFwriter.pkg"
 
-  uninstall script: "/Library/Printers/RWTS/PDFwriter/uninstall"
+  uninstall script: {
+    executable: "/Library/Printers/RWTS/PDFwriter/uninstall",
+    sudo:       true,
+  }
 end

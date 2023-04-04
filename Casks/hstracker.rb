@@ -1,6 +1,6 @@
 cask "hstracker" do
-  version "2.3.5"
-  sha256 "5b157dbe25e49ca9d89a27c486aa47644c2dde22da03beb799660b0d7fb9d25a"
+  version "2.3.12"
+  sha256 "272f60424bb44ec1da26845d047f7b9402482814729ae8a0b89beb3f6172e9e5"
 
   url "https://github.com/HearthSim/HSTracker/releases/download/#{version}/HSTracker.app.zip",
       verified: "github.com/HearthSim/HSTracker/"
@@ -13,6 +13,7 @@ cask "hstracker" do
     regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
+  auto_updates true
   depends_on macos: ">= :sierra"
 
   app "HSTracker.app"

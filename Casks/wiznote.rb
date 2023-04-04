@@ -1,9 +1,9 @@
 cask "wiznote" do
   arch arm: "arm64", intel: "x64"
 
-  version "0.1.91"
-  sha256 arm:   "fe568ecc8b221890927f2bf46eaf422779a511bd6a11a17e4e2895078434723a",
-         intel: "ae67a2d5419b4aefb57b74198665fdf3c173d0d9f1f04f443f5c5297d9328c08"
+  version "0.1.100"
+  sha256 arm:   "b2b52cb925e457911dd232c90e471aad4cf521a815b585dd06d3f0d9a1f456d9",
+         intel: "320425fccb73daaec1488bf3afe13b2edbc0a740add067cf891168f06f82c5d7"
 
   url "https://get.wiz.cn/x/wiznote-desktop-#{version}-mac-#{arch}.dmg"
   name "WizNote"
@@ -12,8 +12,8 @@ cask "wiznote" do
 
   livecheck do
     url "https://url.wiz.cn/u/mac64_new"
-    strategy :header_match
     regex(/wiznote[._-]desktop[._-]?(\d+(?:\.\d+)+).*?\.dmg/i)
+    strategy :header_match
   end
 
   auto_updates true

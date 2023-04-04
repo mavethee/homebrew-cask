@@ -1,6 +1,6 @@
 cask "timeular" do
-  version "5.7.4"
-  sha256 "fe5b0120fc81bdd8fefe75ef2a8dbe86e8043663dea9ac9884a0413ad61a35c5"
+  version "5.8.2"
+  sha256 "fa77b20e9db012d2995417daf7b8c6bb9586917a04ef01765dcfd082371917aa"
 
   url "https://timeular-desktop-packages.s3.amazonaws.com/mac/production/Timeular-#{version}.dmg",
       verified: "timeular-desktop-packages.s3.amazonaws.com/"
@@ -16,4 +16,10 @@ cask "timeular" do
   auto_updates true
 
   app "Timeular.app"
+
+  zap trash: [
+    "~/Library/Application Support/Timeular",
+    "~/Library/Logs/Timeular",
+    "~/Library/Preferences/com.timeular.zei.plist",
+  ]
 end

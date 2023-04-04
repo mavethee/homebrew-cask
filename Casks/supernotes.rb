@@ -1,6 +1,6 @@
 cask "supernotes" do
-  version "2.2.3"
-  sha256 "ef6cf5acb50528273846809a53009bf55e028b38e6df341e5b9096116de26a80"
+  version "2.3.1"
+  sha256 "767e0a778c0c030dac6783da0481197fca0d595bfd797b4eda01275a7e885c31"
 
   url "https://download.supernotes.app/Supernotes-#{version}.dmg"
   name "Supernotes"
@@ -9,8 +9,8 @@ cask "supernotes" do
 
   livecheck do
     url "https://api.supernotes.app/v1/"
-    strategy :page_match do |page|
-      JSON.parse(page)["version"]
+    strategy :json do |json|
+      json["version"]
     end
   end
 

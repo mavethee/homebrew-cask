@@ -1,16 +1,18 @@
 cask "qcad" do
   arch arm: "11-12-arm64", intel: "10.14-12"
 
-  version "3.27.8"
-  sha256 arm:   "ca6caa224d007e184e4b48895117611b20e1b8d28e85e97be53cf54c4fac5a4e",
-         intel: "418d5a29ee34b69643c65aa0dc43f0655db977ff6f6cc08a157a3ee87b4cb298"
-
-  url "https://www.qcad.org/archives/qcad/qcad-#{version}-trial-macos-#{arch}.dmg"
+  version "3.27.9"
 
   on_high_sierra :or_older do
     sha256 "589a84168c38bf57435441511b19fa081b622e009719c4be7cc1385b7dc55eeb"
 
     url "https://www.qcad.org/archives/qcad/qcad-#{version}-trial-macos-10.10-10.13.dmg"
+  end
+  on_mojave :or_newer do
+    sha256 arm:   "5f4340e2feb72699b87dbaf8cd8708f54a0cb44874516fdcf21b36fc5a1fb269",
+           intel: "cf8578789a17b7f4a550646063e6a12634440b20172f1e21b9cd260b176a4e92"
+
+    url "https://www.qcad.org/archives/qcad/qcad-#{version}-trial-macos-#{arch}.dmg"
   end
 
   name "QCAD"

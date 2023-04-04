@@ -1,14 +1,14 @@
 cask "httpie" do
   arch arm: "-arm64"
 
-  version "2022.16.0"
-  sha256 arm:   "a557901161e35a0a9f6373b383b87043f6fa541009bf0ae5297314cc01b0961a",
-         intel: "2af6bc5f8b2895ce03dd63f159541d121d88ab8b9696c1a48c783e48e98999fd"
+  version "2023.1.2"
+  sha256 arm:   "1d9924a0c256fbbccff2e1f1ec0e0b826c4af5acc8184bd2fffb4e05f72a4f40",
+         intel: "23fcc2aff253aaf442b4083992db8be7d818d329be78db5c59fd19b9cf1c70f2"
 
   url "https://github.com/httpie/desktop/releases/download/v#{version}/HTTPie-#{version}#{arch}.dmg",
       verified: "github.com/httpie/desktop/"
   name "HTTPie for Desktop"
-  desc "Desktop wrapper for HTTPie"
+  desc "Testing client for REST, GraphQL, and HTTP APIs"
   homepage "https://httpie.io/product"
 
   livecheck do

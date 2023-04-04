@@ -1,6 +1,6 @@
 cask "tidelift" do
-  version "1.12.16"
-  sha256 "27a239647eb55e802428eeb02c299d0a109dc352d28fa47428a774569fe54333"
+  version "1.12.30"
+  sha256 "7a5ffbf1ea8401796dadca5a8f378a77f78867292b7bdfdd6ecb5230b77c741e"
 
   url "https://download.tidelift.com/cli/#{version}/darwin_homebrew/tidelift"
   name "Tidelift CLI"
@@ -17,4 +17,6 @@ cask "tidelift" do
   postflight do
     set_permissions "#{staged_path}/tidelift", "+x"
   end
+
+  # No zap stanza required
 end

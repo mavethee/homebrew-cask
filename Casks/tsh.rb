@@ -1,11 +1,12 @@
 cask "tsh" do
-  version "11.1.4"
-  sha256 "c9a7c6cf8cbf7bab8ca0c3a82e7941b3d89e4691d6514bbe64ab9ce42ea96ed5"
+  version "12.1.5"
+  sha256 "df229d4bb662788295fa3ef65b95a72364b9f9d471f16cbc579235257fdaf745"
 
-  url "https://get.gravitational.com/tsh-#{version}.pkg"
+  url "https://cdn.teleport.dev/tsh-#{version}.pkg",
+      verified: "cdn.teleport.dev/"
   name "Teleport TSH"
   desc "SSH server for teams managing distributed infrastructure"
-  homepage "https://gravitational.com/teleport"
+  homepage "https://goteleport.com/"
 
   livecheck do
     url "https://goteleport.com/download/"

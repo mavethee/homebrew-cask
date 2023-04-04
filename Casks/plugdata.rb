@@ -1,21 +1,22 @@
 cask "plugdata" do
-  version "0.6.2"
-  sha256 "3b18da8fa9fcd155efeb78e1f192acc6f9b74a62040e901d19aa34d6dda8218f"
+  version "0.7.0"
+  sha256 "f54ee3b87e143bb2ae690f1e419397606618c7816a46c060da4534cf20f7e165"
 
-  url "https://github.com/timothyschoen/PlugData/releases/download/v#{version}/PlugData-MacOS-Universal.zip"
+  url "https://github.com/timothyschoen/PlugData/releases/download/v#{version}/plugdata-macOS-Universal.pkg"
   name "PlugData"
   desc "Plugin wrapper for PureData"
   homepage "https://github.com/timothyschoen/PlugData"
 
   auto_updates true
 
-  pkg "PlugData-MacOS-Universal.pkg"
+  pkg "plugdata-macOS-Universal.pkg"
 
   uninstall pkgutil: [
-    "com.Octagon.app.pkg.PlugData",
-    "com.Octagon.au.pkg.PlugData",
-    "com.Octagon.lv2.pkg.PlugData",
-    "com.Octagon.vst3.pkg.PlugData",
+    "com.plugdata.app.pkg.plugdata",
+    "com.plugdata.au.pkg.plugdata",
+    "com.plugdata.clap.pkg.plugdata",
+    "com.plugdata.lv2.pkg.plugdata",
+    "com.plugdata.vst3.pkg.plugdata",
   ]
 
   zap trash: [

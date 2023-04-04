@@ -1,6 +1,6 @@
 cask "envkey" do
-  version "1.4.28"
-  sha256 "502a200ad147361d05d1cb941f199781d7008d6386050fb67bb61db14ab38ef6"
+  version "1.5.5"
+  sha256 "32c69d5b20da62ab19e27e9f038e30d28fb458901b5a4271db9c767518d21ad5"
 
   url "https://github.com/envkey/envkey-app/releases/download/darwin-x64-prod-v#{version}/EnvKey-#{version}-mac.zip",
       verified: "github.com/envkey/envkey-app/"
@@ -14,4 +14,13 @@ cask "envkey" do
   end
 
   app "EnvKey.app"
+
+  zap trash: [
+    "~/Library/Application Support/EnvKey",
+    "~/Library/Caches/com.envkey.EnvKeyApp",
+    "~/Library/Caches/com.envkey.EnvKeyApp.ShipIt",
+    "~/Library/HTTPStorages/com.envkey.EnvKeyApp",
+    "~/Library/Logs/EnvKey",
+    "~/Library/Preferences/com.envkey.EnvKeyApp.plist",
+  ]
 end

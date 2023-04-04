@@ -15,9 +15,13 @@ cask "microsoft-word" do
     version "16.54.21101001"
     sha256 "7f3ed397b517aac3637d8b8f8b4233f9e7132941f0657eaca8ec423ac068616e"
   end
-  on_catalina :or_newer do
-    version "16.68.22121100"
-    sha256 "2eb51e0c1ab59df6fbc0362a4dae20346abb1cd8d4a92fa27984b66e79fd8290"
+  on_catalina do
+    version "16.66.22101101"
+    sha256 "5a6a75d9a5b46cceeff5a1b7925c0eab6e4976cba529149b7b291a0355e7a7c9"
+  end
+  on_big_sur :or_newer do
+    version "16.71.23031200"
+    sha256 "9b409d1723213ff68e89d8f18b98b928433f0380f108ab9e8d7f6b84a9f882d6"
   end
 
   url "https://officecdnmac.microsoft.com/pr/C1297A47-86C4-4C1F-97FA-950631F94777/MacAutoupdate/Microsoft_Word_#{version}_Installer.pkg",
@@ -32,7 +36,10 @@ cask "microsoft-word" do
   end
 
   auto_updates true
-  conflicts_with cask: "microsoft-office"
+  conflicts_with cask: [
+    "microsoft-office",
+    "microsoft-office-businesspro",
+  ]
   depends_on cask: "microsoft-auto-update"
 
   pkg "Microsoft_Word_#{version}_Installer.pkg",

@@ -1,6 +1,6 @@
 cask "kkbox" do
-  version "22.12.0"
-  sha256 "ee7bb8c9da1e0f1a873a75f579ef1a82d4d3158feeaa3165316541c273b401a0"
+  version "23.3.10"
+  sha256 "de6ca4cecd013b0362dfcc588301b83b2f7daa59bd8e0484a1da5931669eb6e9"
 
   url "https://dl-universal.kfs.io/#{version}/KKBOX-#{version}.dmg",
       verified: "dl-universal.kfs.io/"

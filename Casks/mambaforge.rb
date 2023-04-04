@@ -1,9 +1,9 @@
 cask "mambaforge" do
   arch arm: "arm64", intel: "x86_64"
 
-  version "22.9.0-2"
-  sha256 arm:   "21959f1a17a662b3f260e8b04fe2dfe82f1246746875a72f513d39159d8b816b",
-         intel: "844fc1ac61967990f0cfb9e516e8b0704ac2e500854588fd9851d2790d817bab"
+  version "23.1.0-1"
+  sha256 arm:   "e519a74734f963c2fe744557115f8862fa573dea0de581b0b4a22cbd31127448",
+         intel: "e33f9d426d62759e7c4adf5431fdd91a23df71732b5e22b699cace52255e8196"
 
   url "https://github.com/conda-forge/miniforge/releases/download/#{version}/Mambaforge-#{version}-MacOSX-#{arch}.sh"
   name "mambaforge"
@@ -12,8 +12,8 @@ cask "mambaforge" do
 
   livecheck do
     url :url
-    strategy :github_latest
     regex(%r{href=.*?/tag/v?(\d+(?:[._-]\d+)+)["' >]}i)
+    strategy :github_latest
   end
 
   auto_updates true
@@ -28,6 +28,7 @@ cask "mambaforge" do
     args:       ["-b", "-p", "#{caskroom_path}/base"],
   }
   binary "#{caskroom_path}/base/condabin/conda"
+  binary "#{caskroom_path}/base/condabin/mamba"
 
   uninstall delete: "#{caskroom_path}/base"
 

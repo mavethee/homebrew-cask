@@ -1,8 +1,8 @@
 cask "appflowy" do
-  version "0.0.9"
-  sha256 "ca78d381fe52c31929fa297694e615e05c8c4c3d4939928686ec6969e2edbb5b"
+  version "0.1.2"
+  sha256 "0e7463be04cd13ca22d6b7400bbdf385ec953f60cc7457bf418919141b4457de"
 
-  url "https://github.com/AppFlowy-IO/AppFlowy/releases/download/#{version}/Appflowy-macos-x86_64.zip",
+  url "https://github.com/AppFlowy-IO/AppFlowy/releases/download/#{version}/Appflowy_#{version}_macos-x86_64.zip",
       verified: "github.com/AppFlowy-IO/AppFlowy/"
   name "AppFlowy"
   desc "Open-source project and knowledge management tool"

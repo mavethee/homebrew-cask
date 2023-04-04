@@ -1,9 +1,9 @@
 cask "onedrive" do
-  version "22.238.1114.0002"
-  sha256 "0be9f0c997b05f90b01ed2a6837de34889f739f4dc74e177e492addab38484d4"
+  version "23.054.0313.0003"
+  sha256 "7964988ae0597e12b5c7636ebe627c3d2fc9bc5444e1137c23923c00d8d6856e"
 
-  url "https://oneclient.sfx.ms/Mac/Prod/#{version}/universal/OneDrive.pkg",
-      verified: "oneclient.sfx.ms/Mac/Prod/"
+  url "https://oneclient.sfx.ms/Mac/Installers/#{version}/universal/OneDrive.pkg",
+      verified: "oneclient.sfx.ms/Mac/Installers/"
   name "OneDrive"
   desc "Cloud storage client"
   homepage "https://onedrive.live.com/"
@@ -14,7 +14,10 @@ cask "onedrive" do
   end
 
   auto_updates true
-  conflicts_with cask: "microsoft-office"
+  conflicts_with cask: [
+    "microsoft-office",
+    "microsoft-office-businesspro",
+  ]
   depends_on macos: ">= :sierra"
 
   pkg "OneDrive.pkg"

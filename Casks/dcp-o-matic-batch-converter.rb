@@ -1,6 +1,6 @@
 cask "dcp-o-matic-batch-converter" do
-  version "2.16.38"
-  sha256 "7462ed978e7a83b44573ec6288020e008d5f47b1c19c1ef2f83830c665ad9b1d"
+  version "2.16.50"
+  sha256 "36d5ae61bd7d1f5fdf2980d7fa6532df01c10a02e10120a3a31b12e60d1c87fb"
 
   url "https://dcpomatic.com/dl.php?id=osx-10.10-batch&version=#{version}"
   name "DCP-o-matic Batch converter"

@@ -1,20 +1,22 @@
 cask "languagetool" do
-  version "1.1.1,38"
-  sha256 "586b0df96025e78899979445917fe559a14f7d70749c9d1f7e0cfc29b2312f69"
+  version "1.2.4"
+  sha256 "e99184a046c64f75779ecc1e63366b5fa0711615c2f233da824073f691ac9e3d"
 
-  url "https://languagetool.org/download/mac-app/LanguageToolDesktop-#{version.csv.first}.dmg"
+  url "https://languagetool.org/download/mac-app/LanguageToolDesktop-#{version}.dmg"
   name "LanguageTool for Desktop"
   desc "Grammar, spelling and style suggestions in all the writing apps"
   homepage "https://languagetool.org/"
 
   livecheck do
     url "https://languagetool.org/download/mac-app/appcast.xml"
-    strategy :sparkle
+    strategy :sparkle, &:short_version
   end
 
   depends_on macos: ">= :big_sur"
 
   app "LanguageTool for Desktop.app"
+
+  uninstall quit: "org.languagetool.desktop"
 
   zap trash: [
     "~/Library/Application Support/LanguageTool for Desktop",

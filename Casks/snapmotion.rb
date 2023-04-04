@@ -1,6 +1,6 @@
 cask "snapmotion" do
-  version "5.0.7,4d545b9c-091a-4064-b236-dbba3477224e"
-  sha256 "0074e80f564b6e0477ccbe14339e232938b5d33c8d655c2ba288ec66a06b09d4"
+  version "5.0.9,05208b67-1438-4340-8775-ab62a2b81155"
+  sha256 "0d07a88313c9e568da84667c4048e2d7869736e037c6f01832c02f492f22cf58"
 
   url "https://neededapps.nyc3.digitaloceanspaces.com/media/public/#{version.csv.second}.zip",
       verified: "neededapps.nyc3.digitaloceanspaces.com/media/public/"
@@ -17,6 +17,8 @@ cask "snapmotion" do
       "#{item.short_version},#{hex}"
     end
   end
+
+  depends_on macos: ">= :big_sur"
 
   app "SnapMotion.app"
 
