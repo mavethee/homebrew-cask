@@ -1,9 +1,9 @@
 cask "exodus" do
   arch arm: "macos-arm64", intel: "macos"
 
-  version "23.3.29"
-  sha256 arm:   "47221eafd89f2797841da5ec80706bf5ae5937f089b1d1166d49c3030c7119d3",
-         intel: "1d57bef5d599557fff4548f846829d8d9bfbb43bfbd2e378709f194ff5e9ff7b"
+  version "23.5.8"
+  sha256 arm:   "d5a63eca38bac9bd2c1b1af58e4e5762018240dbf013efc39238732118cb2fa9",
+         intel: "f2d781cb1c0cc2bf08fd5842f3f52fd0a743feee93ca0f346ade15bf44918f7a"
 
   url "https://downloads.exodus.com/releases/exodus-#{arch}-#{version}.dmg"
   name "Exodus"

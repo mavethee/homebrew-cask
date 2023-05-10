@@ -1,6 +1,6 @@
 cask "setapp" do
-  version "3.21.3,30,1680095418"
-  sha256 "9fecd40a316abde51f6960624c535bbd4c2b3240c47b542f76a3053ec3f6eb09"
+  version "3.25.0,44,1683023858"
+  sha256 "84d593dd6c7ca62f6e0b528d1ddaed0649a55bbdbf2aaa6bceb277fa45d127e4"
 
   url "https://dl.devmate.com/com.setapp.DesktopClient/#{version.csv.second}/#{version.csv.third}/Setapp-#{version.csv.second}.zip",
       verified: "devmate.com/com.setapp.DesktopClient/"
@@ -16,7 +16,7 @@ cask "setapp" do
   end
 
   auto_updates true
-  depends_on macos: ">= :catalina"
+  depends_on macos: ">= :big_sur"
 
   app "Setapp.app"
 

@@ -1,6 +1,6 @@
 cask "wezterm" do
-  version "20230326-111934,3666303c"
-  sha256 "06d38d0c4fca4fad8c1af3d3a8c42d0b976cd2202cc5341a014d33fc583fbd87"
+  version "20230408-112425,69ae8472"
+  sha256 "74061e67748885735f09dfbf3bc80d450072c10ea4a84a52dca94aff3b717af6"
 
   url "https://github.com/wez/wezterm/releases/download/#{version.csv.first}-#{version.csv.second}/WezTerm-macos-#{version.csv.first}-#{version.csv.second}.zip",
       verified: "github.com/wez/wezterm/"
@@ -10,9 +10,9 @@ cask "wezterm" do
 
   livecheck do
     url :url
-    regex(%r{href=["']?[^"' >]*?/tag/[^"' >]*?(\d+(?:[.-]\d+)+)-(\h+)["' >]}i)
-    strategy :github_latest do |page, regex|
-      page.scan(regex).map { |match| "#{match[0]},#{match[1]}" }
+    regex(/^(\d+(?:[.-]\d+)+)-(\h+)$/i)
+    strategy :github_latest do |json, regex|
+      json["tag_name"]&.scan(regex)&.map { |match| "#{match[0]},#{match[1]}" }
     end
   end
 

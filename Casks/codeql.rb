@@ -1,6 +1,6 @@
 cask "codeql" do
-  version "2.12.5"
-  sha256 "970b3c8a3f0624da26e79eb5c4267f24f67d45599be2f603d0634bf9c753f14d"
+  version "2.13.1"
+  sha256 "b71317ed8e7421264c32616c89dbad8db1d482b2ab6aed70e9be7c705bdf5628"
 
   url "https://github.com/github/codeql-cli-binaries/releases/download/v#{version}/codeql-osx64.zip"
   name "CodeQL"
@@ -8,4 +8,6 @@ cask "codeql" do
   homepage "https://codeql.github.com/"
 
   binary "#{staged_path}/codeql/codeql"
+
+  # No zap stanza required
 end

@@ -1,13 +1,13 @@
 cask "elephicon" do
   arch arm: "arm64", intel: "x64"
 
-  version "2.3.6"
-  sha256 arm:   "c96b0e194cef3930e295f0bf03f0e89a76a206ded5e4c4a01494afc6281fbe5b",
-         intel: "ddb62454bd4d0cc2a02e283f3ee4518341d34b852f66f71413dfc6b3642b841a"
+  version "2.4.3"
+  sha256 arm:   "84e25aeba101d1236fe24e219bd1dd686de8b4bfc8e068471d1ef123ef01cdc5",
+         intel: "fa8de6511080600cab5d86f11852478995f03b898ed93e382ec4d1552e9bc8d8"
 
   url "https://github.com/sprout2000/elephicon/releases/download/v#{version}/Elephicon-#{version}-darwin-#{arch}.dmg"
   name "Elephicon"
-  desc "Create Apple ICNS and Microsoft ICO files from PNG"
+  desc "Create icns and ico files from png"
   homepage "https://github.com/sprout2000/elephicon/"
 
   auto_updates true

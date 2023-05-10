@@ -1,13 +1,13 @@
 cask "mongodb-compass" do
   arch arm: "arm64", intel: "x64"
 
-  version "1.36.2"
-  sha256 arm:   "daaaf1e41036b53f4963b959eba4545087f476c899ee6a62454246b1893cc4fd",
-         intel: "fc2fd6e562a07714b774f2410277f2de1b58e8700fa16eb7c6aee9a66bc4cf45"
+  version "1.36.4"
+  sha256 arm:   "2d5d89cf646338e874db6e02697c8a404e8864506e659052736e1f772f1bc203",
+         intel: "55cbac6dcd88f36e18a870e846e87f7c353a1147127b861ed5b2a20b96ffd5fb"
 
   url "https://downloads.mongodb.com/compass/mongodb-compass-#{version}-darwin-#{arch}.dmg"
   name "MongoDB Compass"
-  desc "Explore and manipulate your MongoDB data"
+  desc "Interactive tool for analyzing MongoDB data"
   homepage "https://www.mongodb.com/products/compass"
 
   livecheck do

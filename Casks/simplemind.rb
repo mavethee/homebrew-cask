@@ -1,10 +1,10 @@
 cask "simplemind" do
-  version "2.0.2,b2685"
-  sha256 "f69a5362bc47821e3eb3314febcb4d23b5772be01c5d88bc9ed66f1e35e224f3"
+  version "2.1.1,b2823"
+  sha256 "d0f7f670f6ce58fb5328c8be1a44080608c5e48fedff578dc0ffcd86dd6544ee"
 
   url "https://simpleapps.eu/simplemind/SM2Mac_G7Ynr4BfJYzhbHtCCTr/SimpleMindMacOS#{version.csv.first.no_dots}#{version.csv.second}.dmg"
   name "SimpleMind"
-  desc "Cross-platform Mind Mapping tool"
+  desc "Cross-platform mind mapping tool"
   homepage "https://simpleapps.eu/"
 
   livecheck do

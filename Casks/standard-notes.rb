@@ -1,9 +1,9 @@
 cask "standard-notes" do
   arch arm: "arm64", intel: "x64"
 
-  version "3.150.33"
-  sha256 arm:   "778045e251fd572ba56a3e9f6a533d2b6a09445f0acc59b0b32bd9f080972207",
-         intel: "c0549a9879be78381663924112684396287cb33459232e8a51055794f489a6f4"
+  version "3.158.4"
+  sha256 arm:   "8c5a2951718eddef507b29b35499a59385c7c867b5548e7fca99d7212e4246be",
+         intel: "e4c93cbe2be54f5c80e9e5a2c890f2962188dcf5bc0a7f42d06680adf81535a9"
 
   url "https://github.com/standardnotes/app/releases/download/%40standardnotes%2Fdesktop%40#{version}/standard-notes-#{version}-mac-#{arch}.zip",
       verified: "github.com/standardnotes/app/"
@@ -11,9 +11,13 @@ cask "standard-notes" do
   desc "Free, open-source, and completely encrypted notes app"
   homepage "https://standardnotes.org/"
 
+  # Using only desktop releases that are not marked as pre-release to align
+  # with the auto-updater strategy used by the app.
+  # See: https://github.com/Homebrew/homebrew-cask/pull/145753#issuecomment-1521465815
   livecheck do
-    url "https://github.com/standardnotes/app/releases/latest"
-    strategy :header_match
+    url "https://github.com/standardnotes/app/releases?q=prerelease%3Afalse"
+    regex(%r{href=["'].*?tags/@standardnotes/desktop@(\d+(?:\.\d+)+).*?["']}i)
+    strategy :page_match
   end
 
   auto_updates true

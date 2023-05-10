@@ -1,11 +1,11 @@
 cask "usmart-trade" do
-  version "3.20.1,aec612d8-44f2-465b-a8ca-9618eca890c5,2023-04-03"
-  sha256 "ca7334bd9a68ee17e0b1cbcf5cd3bde8dd1adbeaccd8ae65933f0aca2a8b1416"
+  version "3.21.1,46ab20a5-6ca4-4b94-8d19-57375ed04c63,2023-05-05"
+  sha256 "59bbc1c4638a3f92ec556470eaaf23656254edddddaf2f6aae9513e19b715cfc"
 
   url "https://jy-common-prd-1257884527.cos.ap-guangzhou.myqcloud.com/admin/app-version-file/#{version.csv.third}/#{version.csv.second}/uSMART%20Trade-#{version.csv.first}.dmg",
       verified: "jy-common-prd-1257884527.cos.ap-guangzhou.myqcloud.com/"
   name "uSMART Trade"
-  desc "Trade Stocks & Options"
+  desc "Stock and options trading platform"
   homepage "https://www.usmartglobal.com/"
 
   livecheck do

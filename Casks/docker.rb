@@ -6,23 +6,23 @@ cask "docker" do
     sha256 arm:   "fc8609d57fb8c8264122f581c0f66497e46e171f8027d85d90213527d6226362",
            intel: "bee41d646916e579b16b7fae014e2fb5e5e7b5dbaf7c1949821fd311d3ce430b"
 
-    depends_on macos: ">= :catalina"
-
     livecheck do
       skip "Legacy version"
     end
-  end
-  on_big_sur :or_newer do
-    version "4.17.0,99724"
-    sha256 arm:   "5e01465d93dfe18d7678a96705e7c26bb654b6766f06373b5cffbf77c641bccc",
-           intel: "eb0531122a62859ce7b029e943fdad365603a916e6c15c107514c1e4a818d7ef"
 
     depends_on macos: ">= :catalina"
+  end
+  on_big_sur :or_newer do
+    version "4.19.0,106363"
+    sha256 arm:   "4bb0ef4dcceef1cd6e7b1f59bc60e71265952275ce166e749df17ea8a8f492aa",
+           intel: "07b54cc6a2c61f7f37bfa8698449a9db857e4b94133e3614a42a9d8345bc561b"
 
     livecheck do
       url "https://desktop.docker.com/mac/main/#{arch}/appcast.xml"
       strategy :sparkle
     end
+
+    depends_on macos: ">= :big_sur"
   end
 
   url "https://desktop.docker.com/mac/main/#{arch}/#{version.csv.second}/Docker.dmg"
@@ -58,14 +58,15 @@ cask "docker" do
          target: "#{HOMEBREW_PREFIX}/share/fish/vendor_completions.d/docker-compose.fish"
 
   uninstall delete:    [
+              "/Library/PrivilegedHelperTools/com.docker.socket",
               "/Library/PrivilegedHelperTools/com.docker.vmnetd",
               "/usr/local/bin/com.docker.cli",
-              "/usr/local/bin/docker-compose-v1",
+              "/usr/local/bin/docker",
               "/usr/local/bin/docker-compose",
+              "/usr/local/bin/docker-compose-v1",
               "/usr/local/bin/docker-credential-desktop",
               "/usr/local/bin/docker-credential-ecr-login",
               "/usr/local/bin/docker-credential-osxkeychain",
-              "/usr/local/bin/docker",
               "/usr/local/bin/hub-tool",
               "/usr/local/bin/hyperkit",
               "/usr/local/bin/kubectl.docker",
@@ -91,6 +92,7 @@ cask "docker" do
         "/usr/local/bin/docker.backup",
         "~/.docker",
         "~/Library/Application Scripts/com.docker.helper",
+        "~/Library/Application Scripts/group.com.docker",
         "~/Library/Application Support/com.bugsnag.Bugsnag/com.docker.docker",
         "~/Library/Application Support/Docker Desktop",
         "~/Library/Caches/com.docker.docker",
@@ -99,6 +101,7 @@ cask "docker" do
         "~/Library/Containers/com.docker.docker",
         "~/Library/Containers/com.docker.helper",
         "~/Library/Group Containers/group.com.docker",
+        "~/Library/HTTPStorages/com.docker.docker",
         "~/Library/HTTPStorages/com.docker.docker.binarycookies",
         "~/Library/Logs/Docker Desktop",
         "~/Library/Preferences/com.docker.docker.plist",
@@ -111,4 +114,17 @@ cask "docker" do
         "~/Library/Caches/com.plausiblelabs.crashreporter.data",
         "~/Library/Caches/KSCrashReports",
       ]
+
+  caveats <<~EOS
+    CLI tools are installed after launching Docker. They will be symlinked to
+    one of the following based on your preference:
+
+        /usr/local/bin
+        $HOME/.docker/bin
+
+    If your CLI tools were symlinked to $HOME/.docker/bin your path should be
+    modified to include:
+
+        $HOME/.docker/bin
+  EOS
 end
