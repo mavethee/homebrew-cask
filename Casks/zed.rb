@@ -1,6 +1,6 @@
 cask "zed" do
-  version "0.84.5"
-  sha256 "8ff7de018c793d494e255ef2428b90f4da92f24b50543515bac1c938cdcd2221"
+  version "0.86.1"
+  sha256 "8af276335c8f358c0bcdb9a3fb5ae8538400e40efa88b9c449845776c3566ec7"
 
   url "https://zed.dev/api/releases/stable/#{version}/Zed.dmg"
   name "Zed"
