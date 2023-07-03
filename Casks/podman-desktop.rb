@@ -1,9 +1,9 @@
 cask "podman-desktop" do
   arch arm: "arm64", intel: "x64"
 
-  version "1.0.0"
-  sha256 arm:   "a8a5a7cb1b68eeb00d88bf97023d35469fee574b0644fa0ccef459eec661294f",
-         intel: "7469e73401376d526419ee4da130145fa24d74e2dbebfed60339a66ca1fff099"
+  version "1.1.0"
+  sha256 arm:   "ef8f7c4241d22538861274895c7f40a54de456b68fae66b583fde5ad6f442bfd",
+         intel: "a73ecf54ef9191f1337deb78bd4a781cdcc57e0da22d5e5c412de1809abd91b7"
 
   url "https://github.com/containers/podman-desktop/releases/download/v#{version}/podman-desktop-#{version}-#{arch}.dmg",
       verified: "github.com/containers/podman-desktop/"
@@ -21,5 +21,13 @@ cask "podman-desktop" do
 
   app "Podman Desktop.app"
 
-  zap trash: "~/.local/share/containers/podman-desktop"
+  uninstall quit:  "io.podmandesktop.PodmanDesktop",
+            trash: "~/Library/LaunchAgents/io.podman_desktop.PodmanDesktop.plist"
+
+  zap trash: [
+    "~/.local/share/containers/podman-desktop",
+    "~/Library/Application Support/Podman Desktop",
+    "~/Library/Preferences/io.podmandesktop.PodmanDesktop.plist",
+    "~/Library/Saved Application State/io.podmandesktop.PodmanDesktop.savedState",
+  ]
 end

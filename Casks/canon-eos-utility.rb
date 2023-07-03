@@ -1,6 +1,6 @@
 cask "canon-eos-utility" do
-  version "3.16.12.4,0200006892,2"
-  sha256 "7fe9817951892fbf680b1dfd46a0f16dca9aa5c58c8a7f501d43515e0bf017d2"
+  version "3.17.2.1,0200006949,9"
+  sha256 "aa14d8d2681b6473fffcdde3a15944ddfb6bb5463af157c442816bef48027205"
 
   url "https://gdlp01.c-wss.com/gds/#{version.csv.third}/#{version.csv.second}/01/EU-Installset-M#{version.csv.first}.dmg.zip",
       verified: "gdlp01.c-wss.com/"
@@ -33,7 +33,7 @@ cask "canon-eos-utility" do
 
   auto_updates true
 
-  installer manual: "eum#{version}-installer.app"
+  installer manual: "eum#{version.csv.first.major_minor_patch}-installer.app"
 
   uninstall delete: [
               "/Applications/Canon Utilities/CameraSurveyProgram",

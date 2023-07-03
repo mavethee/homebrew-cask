@@ -1,6 +1,6 @@
 cask "stats" do
-  version "2.8.21"
-  sha256 "65202154fbfaff23cff6f28a76e85c54315002ceda5352640d9cf9b63658e135"
+  version "2.9.1"
+  sha256 "85495dcf0cf60e8936c2cb41e0d652bf6dacb5ba1546e5df6d17ed74cdeedf32"
 
   url "https://github.com/exelban/stats/releases/download/v#{version}/Stats.dmg"
   name "Stats"
@@ -14,12 +14,12 @@ cask "stats" do
 
   uninstall quit: "eu.exelban.Stats"
 
-  zap trash: [
-    "~/Library/Application Scripts/eu.exelban.Stats.LaunchAtLogin",
-    "~/Library/Caches/eu.exelban.Stats",
-    "~/Library/Containers/eu.exelban.Stats.LaunchAtLogin",
-    "~/Library/Cookies/eu.exelban.Stats.binarycookies",
-    "~/Library/Preferences/eu.exelban.Stats.plist",
-    "/Library/LaunchDaemons/eu.exelban.Stats.SMC.Helper.plist",
-  ]
+  zap trash:  [
+        "~/Library/Application Scripts/eu.exelban.Stats.LaunchAtLogin",
+        "~/Library/Caches/eu.exelban.Stats",
+        "~/Library/Containers/eu.exelban.Stats.LaunchAtLogin",
+        "~/Library/Cookies/eu.exelban.Stats.binarycookies",
+        "~/Library/Preferences/eu.exelban.Stats.plist",
+      ],
+      delete: "/Library/LaunchDaemons/eu.exelban.Stats.SMC.Helper.plist"
 end

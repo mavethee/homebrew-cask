@@ -1,9 +1,9 @@
 cask "openlens" do
   arch arm: "-arm64"
 
-  version "6.4.15"
-  sha256 arm:   "c01d0dd08c7ad23773398e1042a680832d4377d46c850b134642f4a6c0fa3b2f",
-         intel: "e690b5f47f7e1e7997bd77e44f5a2a2f032006d25d7445ab68414378c27432a0"
+  version "6.5.2-366"
+  sha256 arm:   "2c53fa3ccf383e10c8a711ba23a6277800415173ba45ef12597b656c9d818e29",
+         intel: "22f94468f4ccfe4f24c0580a04f76baa9edadf7f9a6d735d677f828372c139e7"
 
   url "https://github.com/MuhammedKalkan/OpenLens/releases/download/v#{version}/OpenLens-#{version}#{arch}.dmg"
   name "OpenLens"
@@ -11,6 +11,7 @@ cask "openlens" do
   homepage "https://github.com/MuhammedKalkan/OpenLens/"
 
   auto_updates true
+  depends_on macos: ">= :high_sierra"
 
   app "OpenLens.app"
 

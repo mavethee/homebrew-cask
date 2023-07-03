@@ -1,8 +1,8 @@
 cask "pgadmin4" do
-  version "7.1"
-  sha256 "e4bd958d9bc739a5082c87c34dec0e7f1e63d555bc11f76a034ec51dcb40fb09"
+  version "7.4"
+  sha256 "c02092c03c683c0bd91a1ceaf967cd338aeb87535c43b10e2aa8c44a848c06da"
 
-  url "https://ftp.postgresql.org/pub/pgadmin/pgadmin4/v#{version}/macos/pgadmin4-#{version}.dmg",
+  url "https://ftp.postgresql.org/pub/pgadmin/pgadmin4/v#{version}/macos/pgadmin4-#{version}-x86_64.dmg",
       verified: "ftp.postgresql.org/pub/pgadmin/pgadmin4/"
   name "pgAdmin4"
   desc "Administration and development platform for PostgreSQL"

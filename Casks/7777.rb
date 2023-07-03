@@ -1,6 +1,6 @@
 cask "7777" do
-  version "1.1.9"
-  sha256 "0a1a3c4150a4ae982734c80063a602cd3db013a4eb121be7b7c12bba2c623fec"
+  version "1.1.13"
+  sha256 "222990ca86ae11702389cf8c5cc3288f4d21e0e02d0ec71229b8bf62ab6e23a0"
 
   url "https://releases.port7777.com/#{version}/macos/7777"
   name "7777"
