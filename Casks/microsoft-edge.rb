@@ -1,14 +1,13 @@
 cask "microsoft-edge" do
   linkid = on_arch_conditional arm: "2093504", intel: "2069148"
 
-  sha256 arm:   "e5685d1fd130fa4bd40a0e419b41c5890d4e0a224abae9f91b908ec69fdcef8f",
-         intel: "b085e93aed413290f84f5d40b8911060430fdb1f5e984b7de07cbd386ecf3087"
-
   on_arm do
-    version "114.0.1823.67,47028e91-44c4-44ac-90dd-859b9bc2e475"
+    version "114.0.1823.82,c16d0e8a-caf1-41f8-aa03-7a608204add7"
+    sha256 "300f3ad399aa9c34cc436e724a8cbf65b813815acc2c6da649a53fb24243ac20"
   end
   on_intel do
-    version "114.0.1823.67,63a4e96e-df62-4905-a167-d3e7409a6b74"
+    version "114.0.1823.82,bd6ac130-9452-4f40-a2ce-fd34ea2c8a62"
+    sha256 "bf941cdc6b2dedaf746f3598639e2ddabef12120fdbabc6e0a5a326a6b79b6ef"
   end
 
   url "https://msedge.sf.dl.delivery.mp.microsoft.com/filestreamingservice/files/#{version.csv.second}/MicrosoftEdge-#{version.csv.first}.pkg"
@@ -20,10 +19,7 @@ cask "microsoft-edge" do
     url "https://go.microsoft.com/fwlink/?linkid=#{linkid}"
     regex(%r{/([^/]+)/MicrosoftEdge[._-]v?(\d+(?:\.\d+)+)\.pkg}i)
     strategy :header_match do |headers, regex|
-      match = headers["location"]&.match(regex)
-      next if match.blank?
-
-      "#{match[2]},#{match[1]}"
+      headers["location"].scan(regex).map { |match| "#{match[1]},#{match[0]}" }
     end
   end
 

@@ -2,9 +2,9 @@ cask "listen1" do
   # NOTE: "1" is not a version number, but an intrinsic part of the product name
   arch arm: "arm64", intel: "x64"
 
-  version "2.28.0"
-  sha256 arm:   "a71abe781fe85ee47e5225bb51b4a245a7113c2bc4b4e347c0020c08b64bdfdd",
-         intel: "0f836da96ea85d84e8bcb8e8c3df90f4199c9476f947875d7857f3424c7d7f33"
+  version "2.30.0"
+  sha256 arm:   "cfaea06f656d941f5727e18c91f2d851f73a48e6cd9948322b9c1e6ce4306191",
+         intel: "8e1971b2977c522f5052924a4914702546dbc0184774e1c69390a6605d379459"
 
   url "https://github.com/listen1/listen1_desktop/releases/download/v#{version}/Listen1_#{version}_mac_#{arch}.dmg",
       verified: "github.com/listen1/listen1_desktop/"
