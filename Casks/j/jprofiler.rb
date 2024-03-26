@@ -1,6 +1,6 @@
 cask "jprofiler" do
-  version "14.0.1"
-  sha256 "0780b060956a79c54f280a44dc68953211ed101355a71463d8d553e4d10f9fda"
+  version "14.0.2"
+  sha256 "606519950f5c67e8d60b04964558229398624fdeff657c898bd2db9cc3e15a17"
 
   url "https://download-gcdn.ej-technologies.com/jprofiler/jprofiler_macos_#{version.dots_to_underscores}.dmg"
   name "JProfiler"
@@ -13,4 +13,11 @@ cask "jprofiler" do
   end
 
   app "JProfiler.app"
+
+  zap trash: [
+    "~/.jprofiler*",
+    "~/Library/Preferences/com.jprofiler.history.plist",
+    "~/Library/Preferences/com.jprofiler.v*.plist",
+    "~/Library/Preferences/jprofiler.vmoptions",
+  ]
 end

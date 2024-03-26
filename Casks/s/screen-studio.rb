@@ -1,9 +1,9 @@
 cask "screen-studio" do
   arch arm: "-arm64"
 
-  version "2.20.4"
-  sha256 arm:   "92db86b350fa3cbde5c208779cea9076a7427a8bbaac097ef6b7d662cf49d2e2",
-         intel: "85ea99e5ea125bc3b599c876cc8a7f259bf417b84ab85c5c69a39434fe68bcbc"
+  version "2.22.3"
+  sha256 arm:   "c27204f05546d9e879d39a373354a2af06070cbdbc15c6248f53e7fe2b9e84e2",
+         intel: "a44ca322cbfb908f1c505d2f7ca476a24a1c7f151dbd34a9737b85ba13b700ab"
 
   url "https://screenstudioassets.com/Screen%20Studio-#{version}#{arch}-mac.zip",
       verified: "screenstudioassets.com/"
@@ -12,9 +12,9 @@ cask "screen-studio" do
   homepage "https://www.screen.studio/"
 
   livecheck do
-    url "https://www.screen.studio/api/app-version"
+    url "https://www.screen.studio/api/trpc/appInfo.latestVersionInfo?input=%7B%22isBeta%22%3Afalse%7D"
     strategy :json do |json|
-      json["version"]
+      json.dig("result", "data", "version")
     end
   end
 

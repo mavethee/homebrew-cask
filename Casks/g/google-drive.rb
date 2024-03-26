@@ -1,5 +1,5 @@
 cask "google-drive" do
-  version "88.0.0"
+  version "89.0.2"
   sha256 :no_check
 
   # "5-percent" is included in the url to ensure that `brew upgrade` does not update to an older version as the
@@ -46,7 +46,8 @@ cask "google-drive" do
       ],
       pkgutil:   "com.google.pkg.Keystone",
       trash:     [
-        "~/Library/Application Scripts/com.google.drivefs*.finderhelper.findersync",
+        "~/Library/Application Scripts/com.google.drivefs*",
+        "~/Library/Application Scripts/EQHXZ8M8AV.group.com.google.drivefs",
         "~/Library/Application Support/FileProvider/com.google.drivefs.fpext",
         "~/Library/Application Support/Google/DriveFS",
         "~/Library/Caches/com.google.drivefs",

@@ -1,25 +1,12 @@
 cask "codeedit" do
-  version "0.0.3-alpha.37,2ba130d"
-  sha256 "7131c5f3fd4b44e02e33d3b6034186c379e4cccf85cdc50aed46dff1585a633d"
+  version "0.1.0"
+  sha256 "0602900471039be43783d0192579349b19ebe936cd61ec382b5b63d4e0001962"
 
-  url "https://github.com/CodeEditApp/CodeEdit/releases/download/#{version.csv.first}/CodeEdit-#{version.csv.second}.dmg",
+  url "https://github.com/CodeEditApp/CodeEdit/releases/download/v#{version}/CodeEdit.dmg",
       verified: "github.com/CodeEditApp/CodeEdit/"
   name "CodeEdit"
   desc "Code editor"
   homepage "https://www.codeedit.app/"
-
-  livecheck do
-    url :url
-    regex(%r{/\D*?([^/]+?)/CodeEdit[._-]([a-f0-9]+)\.dmg$}i)
-    strategy :github_latest do |json, regex|
-      json["assets"]&.map do |asset|
-        match = asset["browser_download_url"]&.match(regex)
-        next if match.blank?
-
-        "#{match[1]},#{match[2]}"
-      end
-    end
-  end
 
   depends_on macos: ">= :ventura"
 
