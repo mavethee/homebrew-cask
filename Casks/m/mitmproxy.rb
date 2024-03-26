@@ -1,8 +1,11 @@
 cask "mitmproxy" do
-  version "10.2.2"
-  sha256 "4b1b7447de18d3a2b52b3123917b8df749371a2030b779d368462b58b20777d1"
+  arch arm: "arm64", intel: "x86_64"
 
-  url "https://downloads.mitmproxy.org/#{version}/mitmproxy-#{version}-macos-x86_64.tar.gz"
+  version "10.2.4"
+  sha256 arm:   "7d036d717bc742b49e03cb8cf13b34762765f742938f84312c6bb7ac1090dbf2",
+         intel: "be62b805770b4f02b3393056abdc44c5066ec1d725dd98c98fbf74f9e00cd32b"
+
+  url "https://downloads.mitmproxy.org/#{version}/mitmproxy-#{version}-macos-#{arch}.tar.gz"
   name "mitmproxy"
   desc "Intercept, modify, replay, save HTTP/S traffic"
   homepage "https://mitmproxy.org/"
@@ -23,8 +26,4 @@ cask "mitmproxy" do
   binary "mitmproxy.app/Contents/MacOS/mitmweb"
 
   zap trash: "~/.mitmproxy"
-
-  caveats do
-    requires_rosetta
-  end
 end

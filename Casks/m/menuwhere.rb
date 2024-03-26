@@ -1,5 +1,5 @@
 cask "menuwhere" do
-  version "2.2.1"
+  version "2.2.2"
   sha256 :no_check
 
   url "https://manytricks.com/download/menuwhere"
@@ -18,6 +18,7 @@ cask "menuwhere" do
 
   zap trash: [
     "~/Library/Caches/com.manytricks.Menuwhere",
+    "~/Library/HTTPStorages/com.manytricks.Menuwhere",
     "~/Library/Preferences/com.manytricks.Menuwhere.plist",
   ]
 end

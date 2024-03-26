@@ -46,27 +46,23 @@ module Homebrew
 
     runner = CiMatrix.random_runner[:name]
     syntax_job = {
-      name:         "syntax",
-      tap:          tap.name,
-      runner:       runner,
-      skip_readall: false,
+      name:   "syntax",
+      tap:    tap.name,
+      runner:,
     }
 
     matrix = [syntax_job]
 
     unless labels&.include?("ci-syntax-only")
       cask_jobs = if args.casks&.any?
-        CiMatrix.generate(tap, labels: labels, cask_names: casks, skip_install: skip_install, new_cask: new_cask)
+        CiMatrix.generate(tap, labels:, cask_names: casks, skip_install:, new_cask:)
       else
-        CiMatrix.generate(tap, labels: labels, skip_install: skip_install, new_cask: new_cask)
+        CiMatrix.generate(tap, labels:, skip_install:, new_cask:)
       end
 
       if cask_jobs.any?
         # If casks were changed, skip `audit` for whole tap.
         syntax_job[:skip_audit] = true
-
-        # If casks were cahnged, skip `readall` in the syntax job.
-        syntax_job[:skip_readall] = true
 
         # The syntax job only runs `style` at this point, which should work on Linux.
         # Running on macOS is currently faster though, since `homebrew/cask` and

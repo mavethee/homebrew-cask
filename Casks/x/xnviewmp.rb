@@ -1,5 +1,5 @@
 cask "xnviewmp" do
-  version "1.6.4"
+  version "1.6.5"
   sha256 :no_check
 
   url "https://download.xnview.com/XnViewMP-mac.dmg"
@@ -12,6 +12,7 @@ cask "xnviewmp" do
     regex(/>XnView\sMP\sv?(\d+(?:\.\d+)+)[\s<]/i)
   end
 
+  auto_updates true
   depends_on macos: ">= :high_sierra"
 
   app "XnViewMP.app"

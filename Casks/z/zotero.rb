@@ -1,6 +1,6 @@
 cask "zotero" do
-  version "6.0.31"
-  sha256 "afabee340bf5fd0dbea7a36725f428b57924e5caac318cf42f427b4d59b5389a"
+  version "6.0.35"
+  sha256 "18fac72c11c5e74250d9612c16313be26bb6bf6f9a63aa00f5d03028d126a3b8"
 
   url "https://download.zotero.org/client/release/#{version}/Zotero-#{version}.dmg"
   name "Zotero"
@@ -9,11 +9,12 @@ cask "zotero" do
 
   livecheck do
     url "https://www.zotero.org/download/"
-    regex(/standaloneVersions.*?"mac"\s*:\s*"(\d+(?:\.\d+)*)"/i)
+    regex(/standaloneVersions.*?"mac"\s*:\s*"(\d+(?:\.\d+)+)"/i)
   end
 
   auto_updates true
-  conflicts_with cask: "homebrew/cask-versions/zotero-beta"
+  conflicts_with cask: "zotero-beta"
+  depends_on macos: ">= :el_capitan"
 
   app "Zotero.app"
 

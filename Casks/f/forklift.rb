@@ -1,6 +1,6 @@
 cask "forklift" do
-  version "4.0.7"
-  sha256 "aab93d73658e5426bf393e5e97abdd86c0b946b6d6b711fd4ce1d51a0939e5fd"
+  version "4.1.1"
+  sha256 "3ca6a5e15b49da76b93fddcbc1f04d5c216e5ea8f55e3e22b4a58c747e10e1d5"
 
   url "https://download.binarynights.com/ForkLift/ForkLift#{version}.zip"
   name "ForkLift"

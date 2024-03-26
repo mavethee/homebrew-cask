@@ -1,6 +1,6 @@
 cask "zed" do
-  version "0.122.2"
-  sha256 "66d9ef98e6acef479f05796bf97cbc67ea940eea2fc1ead4934cde526aa483b4"
+  version "0.125.3"
+  sha256 "028096423755583b9eac8312fccba6351e687226afeda15e278bd1382f94a1fb"
 
   url "https://zed.dev/api/releases/stable/#{version}/Zed.dmg"
   name "Zed"
@@ -23,6 +23,7 @@ cask "zed" do
     "~/.config/Zed",
     "~/Library/Application Support/Zed",
     "~/Library/Logs/Zed",
+    "~/Library/Preferences/dev.zed.Zed.plist",
     "~/Library/Saved Application State/dev.zed.Zed.savedState",
   ]
 end

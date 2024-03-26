@@ -1,9 +1,9 @@
 cask "poe" do
   arch arm: "arm64", intel: "x64"
 
-  version "1.1.15"
-  sha256 arm:   "d8a5d364b2f10cf84ed3807ee5e991927e184a331f9d65b1a2f8b92902f6919e",
-         intel: "c56d9de77c7c12d6a498195423eb312906bf86b7818467aee65ba479e7ba9c5e"
+  version "1.1.17"
+  sha256 arm:   "70cf6c0cb1d41cd9cc11c7e32390f4ba1b2ca4fd3b0132d590f657cbeb739c54",
+         intel: "fba9bbe3dd224706405a34350a84773dbd5262c248716d6bfb2ca7931b1fbf49"
 
   url "https://desktop-app.poecdn.net/updates/darwin_#{arch}/#{version}.zip",
       verified: "desktop-app.poecdn.net/updates/"
